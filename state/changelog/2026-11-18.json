@@ -1,0 +1,19 @@
+{
+ "date": "2026-11-18",
+ "title": "Initial load",
+ "totals": "201 students, 12 teachers, 30 sections, 242 contacts in 119 families",
+ "expected_events": {
+  "sections.created": 1,
+  "users.created": 1
+ },
+ "changes": [
+  {
+   "kind": "initial_load",
+   "summary": "201 students, 12 teachers, 30 sections, 242 contacts in 119 families",
+   "expected_events": [
+    "users.created",
+    "sections.created"
+   ]
+  }
+ ]
+}
