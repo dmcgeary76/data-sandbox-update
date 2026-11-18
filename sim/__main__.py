@@ -190,6 +190,10 @@ def cmd_logins(a, cfg):
         batches = [a.batch]
     else:
         batches = due_login_batches(cfg, now, done)
+    if not batches and not cfg["logins"].get("enabled", True):
+        print("Scheduled logins are paused (logins.enabled: false in config/sandbox.yaml). "
+              "Use --batch N to run a test batch anyway.")
+        return
     if not batches:
         print(f"No login batch due at {now:%a %H:%M} PT (done today: {sorted(done) or 'none'}).")
         return
@@ -232,6 +236,8 @@ def cmd_logins_due(a, cfg):
     from .schedule import due_login_batches, now_pt
     now = now_pt(a.now)
     due = due_login_batches(cfg, now, completed_batches(STATE_DIR, now.date()))
+    if not cfg["logins"].get("enabled", True):
+        print("Scheduled logins are paused (logins.enabled: false in config/sandbox.yaml).")
     print(f"{now:%a %H:%M} PT, due batches: {due or 'none'}")
     out = os.environ.get("GITHUB_OUTPUT")
     if out:

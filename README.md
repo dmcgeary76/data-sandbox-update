@@ -66,17 +66,23 @@ Add these under **Settings > Secrets and variables > Actions** (see `.env.exampl
 | `CLEVER_LOGIN_URL` | logins, probe |
 
 ### 3. First run, in order (Actions tab → workflow → Run workflow)
+Scheduled logins start **paused** (`logins.enabled: false` in `config/sandbox.yaml`), because app
+tiles can only be added once the first sync has created the users. Drift runs on schedule from day one.
+
 1. **Tests**: should pass.
 2. **Bootstrap (first load)**: type `LOAD`. Uploads the district and commits `state/roster.json`.
    Check the district dashboard's sync page about 10 minutes later.
-3. **Probe login page**: screenshots the login page and portal, and lists the form fields and tile
+3. **In Clever**: once the sync shows the users, add the app tiles.
+4. **Probe login page**: screenshots the login page and portal, and lists the form fields and tile
    names. If login fails, adjust `logins:` selectors in `config/sandbox.yaml` using what it found.
-4. **Simulated logins** with `batch: 0` and `limit: 3`: a three-user test. Check the job summary, and the
+5. **Simulated logins** with `batch: 0` and `limit: 3`: a three-user test. Check the job summary, and the
    `login-failures-*` artifact if anything failed. Manual runs don't count as the day's scheduled batch.
-5. **Daily roster drift** with `force: true`: one drift cycle (wait an hour after the bootstrap upload).
+6. **Daily roster drift** with `force: true`: one drift cycle (wait an hour after the bootstrap upload).
    The next morning's run reports the resulting events in its job summary and in `state/events/`.
+7. **Unpause logins**: set `logins.enabled: true` in `config/sandbox.yaml` and commit (the GitHub web
+   editor is fine). The next batch hour picks it up.
 
-After that, it runs on its own.
+After that, it runs on its own. Set it back to `false` any time to pause logins without touching drift.
 
 ## Configuring
 

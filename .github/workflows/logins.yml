@@ -2,7 +2,8 @@ name: Simulated logins
 
 # Fires hourly from 15:10 to 22:10 UTC on weekdays, which covers 8am-2pm Pacific in
 # both PST and PDT. A quick check decides whether a batch is due (batch hours live in
-# config/sandbox.yaml) and catches up if GitHub started the run late.
+# config/sandbox.yaml) and catches up if GitHub started the run late. While
+# `logins.enabled` is false in the config, scheduled runs exit after that check.
 on:
   schedule:
     - cron: "10 15-22 * * 1-5"

@@ -84,6 +84,11 @@ drift:
   updates_range: [2, 4]       # misc record edits per day (address, guardian phone, ELL exit...)
 
 logins:
+  # Pause switch for the scheduled login batches. Leave false until the app tiles
+  # exist on the portal (they can only be added after the first sync creates the
+  # users). Manual runs with a batch number still work while paused, for testing.
+  # Drift is unaffected and runs on schedule either way.
+  enabled: false
   days: weekdays
   # Pacific-time hours when a login batch is due. A batch that GitHub starts late
   # still runs (catch-up). Each batch takes its share of the day's users.

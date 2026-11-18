@@ -38,6 +38,8 @@ def drift_due(cfg: dict, now: datetime, last_drift_date: str) -> tuple[bool, str
 def due_login_batches(cfg: dict, now: datetime, done: set[int]) -> list[int]:
     """Indexes of batches whose hour has arrived and that haven't run yet (catch-up included)."""
     lc = cfg["logins"]
+    if not lc.get("enabled", True):
+        return []
     if not is_school_day(now.date(), lc["days"]):
         return []
     return [i for i, h in enumerate(lc["batch_hours_pt"]) if now.hour >= h and i not in done]
