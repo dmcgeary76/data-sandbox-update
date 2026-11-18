@@ -118,3 +118,21 @@ def test_ages_fit_grades(roster):
     for s in roster.students.values():
         age = 2026 - date.fromisoformat(s.dob).year
         assert GRADE_NUM[s.grade] + 4 <= age <= GRADE_NUM[s.grade] + 7
+
+
+def test_host_key_parsing():
+    from sim.clever import parse_host_key
+    assert parse_host_key("") is None
+    assert parse_host_key("sftp2.clever.com:22 SSH-2.0-Go") is None  # keyscan banner, not a key
+    import paramiko
+    k = paramiko.RSAKey.generate(1024)
+    line = f"sftp2.clever.com {k.get_name()} {k.get_base64()}"
+    assert parse_host_key(line).get_base64() == k.get_base64()
+    assert parse_host_key(f"{k.get_name()} {k.get_base64()}").get_base64() == k.get_base64()
+
+
+def test_example_env_has_no_values():
+    from pathlib import Path
+    for line in (Path(__file__).parent.parent / ".env.example").read_text().splitlines():
+        if line and not line.startswith("#"):
+            assert line.endswith("="), f".env.example must not contain values: {line.split('=')[0]}"

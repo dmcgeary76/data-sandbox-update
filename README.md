@@ -62,7 +62,7 @@ Add these under **Settings > Secrets and variables > Actions** (see `.env.exampl
 | `CLEVER_DISTRICT_ID` | safety check |
 | `CLEVER_DISTRICT_TOKEN` | safety check, Events API report |
 | `CLEVER_SFTP_USERNAME`, `CLEVER_SFTP_PASSWORD` | uploads |
-| `CLEVER_SFTP_HOST_KEY` (optional) | pins the SFTP server key (`ssh-keyscan -t ed25519 sftp2.clever.com`) |
+| `CLEVER_SFTP_HOST_KEY` (optional) | pins the SFTP server key: one full line from `ssh-keyscan sftp2.clever.com 2>/dev/null` |
 | `CLEVER_LOGIN_URL` | logins, probe |
 
 ### 3. First run, in order (Actions tab → workflow → Run workflow)
