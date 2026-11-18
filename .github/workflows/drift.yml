@@ -1,0 +1,48 @@
+name: Daily roster drift
+
+# GitHub cron is UTC. 12:05 UTC is 5:05am PDT and 13:05 UTC is 5:05am PST, so one of
+# the two always lands at 5am Pacific. The job itself checks Pacific time and whether
+# today's drift already ran, so the other trigger exits in seconds.
+on:
+  schedule:
+    - cron: "5 12,13 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Run even if not due (e.g. a second test today). Uploads at most hourly."
+        type: boolean
+        default: false
+      dry_run:
+        description: "Show what would change, without uploading or saving"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: state-writer
+  cancel-in-progress: false
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CLEVER_DISTRICT_ID: ${{ secrets.CLEVER_DISTRICT_ID }}
+      CLEVER_DISTRICT_TOKEN: ${{ secrets.CLEVER_DISTRICT_TOKEN }}
+      CLEVER_SFTP_USERNAME: ${{ secrets.CLEVER_SFTP_USERNAME }}
+      CLEVER_SFTP_PASSWORD: ${{ secrets.CLEVER_SFTP_PASSWORD }}
+      CLEVER_SFTP_HOST_KEY: ${{ secrets.CLEVER_SFTP_HOST_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Report events, apply today's drift, upload
+        run: python -m sim daily ${{ inputs.force && '--force' || '' }} ${{ inputs.dry_run && '--dry-run' || '' }}
+      - name: Save state
+        if: ${{ !inputs.dry_run }}
+        run: scripts/commit-state.sh "Roster drift $(TZ=America/Los_Angeles date +%F)"

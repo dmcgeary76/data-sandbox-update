@@ -1,0 +1,134 @@
+# Configuration for the single sandbox district this repo drives.
+# Secrets (SFTP password, tokens, login URL) live in .env locally and in
+# GitHub Actions secrets in CI. Never put them in this file.
+
+district:
+  # Must match CLEVER_DISTRICT_ID in the environment. The uploader also checks,
+  # via the Data API, that the token's district has this ID and that its name
+  # starts with one of `required_name_prefixes`. Upload is refused otherwise.
+  required_name_prefixes: ["#DEMO"]
+  display_name: "Cedar Valley Unified (Sandbox)"
+  city: "Cedar Valley"
+  state: "CA"
+  zips: ["95401", "95403", "95404", "95407"]
+  phone_area_codes: ["707", "707", "707", "916", "530"]
+  # Reserved .example TLD (RFC 2606): these addresses can never reach a real inbox.
+  staff_email_domain: "cedarvalleyusd.example"
+  student_email_domain: "students.cedarvalleyusd.example"
+  guardian_email_domains: ["example.com", "example.net", "example.org"]
+
+term:
+  name: "2026-2027"
+  start: "2026-08-19"
+  end: "2027-06-10"
+
+seed: 20261118
+
+schools:
+  - id: "ES01"
+    name: "Cedar Ridge Elementary School"
+    number: "101"
+    state_id: "06123450101"
+    model: elementary            # one homeroom teacher per grade, self-contained classes
+    grades: ["Kindergarten", "1", "2", "3", "4", "5"]
+    students_per_grade: 19
+    # Every elementary student is enrolled in each of these, taught by their homeroom teacher.
+    courses:
+      - {code: "HR",   name: "Homeroom", subject: "Homeroom/advisory", period: "HR"}
+      - {code: "MATH", name: "Math",     subject: "Math",              period: "2"}
+    address: "1450 Ridgeview Dr"
+    zip: "95401"
+    phone: "7075550101"
+  - id: "MS01"
+    name: "Juniper Valley Middle School"
+    number: "201"
+    state_id: "06123450201"
+    model: departmental          # one teacher per subject, teaching every grade
+    grades: ["6", "7", "8"]
+    students_per_grade: 29
+    core:                        # every student takes all of these
+      - {code: "MATH", name: "Math",                  subject: "Math"}
+      - {code: "ELA",  name: "English Language Arts", subject: "English/language arts"}
+      - {code: "SCI",  name: "Science",               subject: "Science"}
+      - {code: "SS",   name: "Social Studies",        subject: "Social studies"}
+    electives:                   # every student takes exactly one of these
+      - {code: "PE",   name: "Physical Education",    subject: "PE and health"}
+      - {code: "ART",  name: "Art",                   subject: "Arts and music"}
+    address: "800 Juniper Ln"
+    zip: "95403"
+    phone: "7075550201"
+
+# Demographic mix. Shapes surnames, first names, race codes, Hispanic flag and home language.
+# Roughly modeled on a mid-sized Northern California district.
+demographics:
+  hispanic:    0.40
+  white:       0.33
+  asian:       0.12
+  black:       0.06
+  multiracial: 0.07
+  native:      0.02
+
+drift:
+  days: weekdays              # weekdays | daily
+  run_hour_pt: 5              # earliest Pacific hour the drift job may run
+  band_pct: 0.05              # student total stays within target ±5%
+  students:
+    add_range: [1, 3]
+    remove_range: [0, 2]
+    whole_household_withdraw_chance: 0.35
+    new_sibling_chance: 0.25  # chance a new enrollment joins an existing household
+  teachers:
+    change_chance: 0.6        # chance of a teacher add or remove on a given day
+    band: 1                   # teacher total stays within target ±1
+    min_per_school: 4
+  updates_range: [2, 4]       # misc record edits per day (address, guardian phone, ELL exit...)
+
+logins:
+  # Pause switch for the scheduled login batches. Leave false until the app tiles
+  # exist on the portal (they can only be added after the first sync creates the
+  # users). Manual runs with a batch number still work while paused, for testing.
+  # Drift is unaffected and runs on schedule either way.
+  enabled: false
+  days: weekdays
+  # Pacific-time hours when a login batch is due. A batch that GitHub starts late
+  # still runs (catch-up). Each batch takes its share of the day's users.
+  batch_hours_pt: [8, 10, 12, 14]
+  batch_weights: [0.35, 0.30, 0.20, 0.15]
+  student_fraction: [0.60, 0.80]
+  teacher_fraction: [0.40, 0.70]
+  second_app_chance: 0.20     # chance a user launches two apps in one session
+  concurrency: 3
+  per_user_timeout_s: 90
+  # Users created by today's drift aren't eligible until tomorrow, giving Clever
+  # time to sync them and share them with the apps.
+  min_age_days: 1
+
+  # How to log in. Selectors are tried in order; the first visible one is used.
+  # These are best guesses until `python -m sim probe-login` is run against the
+  # real page. Adjust here, no code change needed.
+  username_selectors:
+    - 'input[name="username"]'
+    - 'input[autocomplete="username"]'
+    - 'input[type="text"]'
+  password_selectors:
+    - 'input[name="password"]'
+    - 'input[type="password"]'
+  submit_selectors:
+    - 'button[type="submit"]'
+    - 'button:has-text("Log in")'
+    - 'button:has-text("Sign in")'
+  # Optional clicks before the username field appears (e.g. an identity provider button).
+  pre_login_clicks: []
+  # A URL fragment (or regex) that means "we're on the Clever Portal".
+  portal_url_pattern: "clever.com/(in/|portal|home)"
+
+# Apps users launch from the portal. `tile` is the visible name of the tile.
+# `expect_url` is a regex the launched app's URL must match to count as success.
+# `steps` (optional) run after the app loads. Supported actions:
+# click_text, click_selector, wait_ms, wait_for_selector, screenshot.
+apps:
+  - key: lantern
+    tile: "Lantern"
+    weight: 1.0
+    expect_url: "lantern"
+    steps: []
