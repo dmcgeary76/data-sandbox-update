@@ -1,0 +1,33 @@
+name: Probe login page
+
+# Run by hand to see what the login page and portal look like from a headless
+# browser: screenshots, form fields, and the names of the app tiles. Use the
+# results to adjust the selectors and tile names in config/sandbox.yaml.
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: "Log in as this student/teacher number (blank = first student in the roster)"
+        required: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CLEVER_LOGIN_URL: ${{ secrets.CLEVER_LOGIN_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - run: python -m sim probe ${{ inputs.username && format('--username {0}', inputs.username) || '' }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: probe-${{ github.run_id }}
+          path: artifacts/probe/
+          retention-days: 14

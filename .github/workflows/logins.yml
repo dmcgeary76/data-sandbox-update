@@ -1,0 +1,81 @@
+name: Simulated logins
+
+# Fires hourly from 15:10 to 22:10 UTC on weekdays, which covers 8am-2pm Pacific in
+# both PST and PDT. A quick check decides whether a batch is due (batch hours live in
+# config/sandbox.yaml) and catches up if GitHub started the run late.
+on:
+  schedule:
+    - cron: "10 15-22 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: "Run this batch number now (0-3). Leave blank to run whatever is due."
+        required: false
+      limit:
+        description: "Only this many users (for testing). Leave blank for the full batch."
+        required: false
+      dry_run:
+        description: "List who would log in, without opening a browser"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: state-writer
+  cancel-in-progress: false
+
+jobs:
+  logins:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      CLEVER_LOGIN_URL: ${{ secrets.CLEVER_LOGIN_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - name: Is a batch due?
+        id: due
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "due=true" >> "$GITHUB_OUTPUT"
+          else
+            python -m sim logins-due
+          fi
+
+      - name: Cache browser
+        if: steps.due.outputs.due == 'true' && !inputs.dry_run
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+      - name: Install browser
+        if: steps.due.outputs.due == 'true' && !inputs.dry_run
+        run: python -m playwright install --with-deps chromium
+
+      - name: Run logins
+        if: steps.due.outputs.due == 'true'
+        run: |
+          args=""
+          [ -n "${{ inputs.batch }}" ] && args="$args --batch ${{ inputs.batch }}"
+          [ -n "${{ inputs.limit }}" ] && args="$args --limit ${{ inputs.limit }}"
+          [ "${{ inputs.dry_run }}" = "true" ] && args="$args --dry-run"
+          python -m sim logins $args
+
+      - name: Keep screenshots and traces of failures
+        if: always() && hashFiles('artifacts/**') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: login-failures-${{ github.run_id }}
+          path: artifacts/
+          retention-days: 14
+
+      - name: Save run records
+        if: always() && steps.due.outputs.due == 'true' && !inputs.dry_run
+        run: scripts/commit-state.sh "Login run $(TZ=America/Los_Angeles date '+%F %H:%M') PT"
