@@ -89,6 +89,22 @@ def _save_cursor(path: Path, last_id: str) -> None:
 
 
 # ----------------------------------------------------------------- SFTP
+KEY_TYPES = ("ssh-ed25519", "ssh-rsa", "ecdsa-sha2-nistp256", "ecdsa-sha2-nistp384", "ecdsa-sha2-nistp521")
+
+
+def parse_host_key(value: str):
+    """Find '<key-type> <base64>' anywhere in an ssh-keyscan line. None if there isn't one."""
+    import paramiko
+    parts = (value or "").split()
+    for i, tok in enumerate(parts[:-1]):
+        if tok in KEY_TYPES:
+            try:
+                return paramiko.PKey.from_type_string(tok, base64.b64decode(parts[i + 1]))
+            except Exception:
+                return None
+    return None
+
+
 def sftp_upload(sec: Secrets, files: list[Path], min_interval_minutes: int = 60, last_upload_at: str = "") -> None:
     """Upload all five files to the SFTP home directory, overwriting the previous set.
 
@@ -104,14 +120,15 @@ def sftp_upload(sec: Secrets, files: list[Path], min_interval_minutes: int = 60,
             raise GuardError(f"Last upload was {int(age.total_seconds() // 60)} min ago; Clever allows at most hourly.")
 
     client = paramiko.SSHClient()
-    if sec.sftp_host_key:
-        # Format: "<key-type> <base64>", e.g. the output of `ssh-keyscan sftp2.clever.com`.
-        ktype, b64 = sec.sftp_host_key.split()[-2:]
-        key = paramiko.PKey.from_type_string(ktype, base64.b64decode(b64))
+    key = parse_host_key(sec.sftp_host_key)
+    if key:
         client.get_host_keys().add(sec.sftp_host, key.get_name(), key)
         client.set_missing_host_key_policy(paramiko.RejectPolicy())
     else:
-        print("WARNING: CLEVER_SFTP_HOST_KEY not set; accepting the server key without pinning.")
+        if sec.sftp_host_key:
+            print("WARNING: CLEVER_SFTP_HOST_KEY doesn't contain a key (expected e.g. 'ssh-rsa AAAA...'); "
+                  "ignoring it.")
+        print("WARNING: SFTP server key not pinned; accepting it as presented.")
         client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     client.connect(sec.sftp_host, port=sec.sftp_port, username=sec.sftp_username, password=sec.sftp_password,
                    look_for_keys=False, allow_agent=False, timeout=30)

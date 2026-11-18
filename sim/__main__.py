@@ -44,11 +44,18 @@ def render_files(cfg: dict, r: Roster):
     return write(render(cfg, r), BUILD_DIR)
 
 
-def upload(cfg: dict, r: Roster, paths) -> None:
+def upload(cfg: dict, r: Roster, paths, first_load: bool = False) -> None:
     from .clever import sftp_upload, verify_sandbox_district
     sec = Secrets.from_env()
-    d = verify_sandbox_district(cfg, sec)
-    print(f"Verified sandbox district: {d.get('name')} ({d.get('id')})")
+    if first_load and not sec.district_token:
+        # Clever only issues the district token once an app is connected to the
+        # district, which needs this first upload. The SFTP account itself belongs
+        # to the sandbox, so the first load goes ahead on those credentials alone.
+        summary("> No CLEVER_DISTRICT_TOKEN yet: skipping the district check for the first load only. "
+                "Every later upload requires it.")
+    else:
+        d = verify_sandbox_district(cfg, sec)
+        print(f"Verified sandbox district: {d.get('name')} ({d.get('id')})")
     sftp_upload(sec, paths, last_upload_at=r.last_upload_at)
     r.last_upload_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -82,7 +89,7 @@ def cmd_init(a, cfg):
     if a.dry_run:
         summary(f"### Dry run: initial load\n{counts_line(r)}\nFiles written to `build/` (not uploaded).")
         return
-    upload(cfg, r, paths)
+    upload(cfg, r, paths, first_load=True)
     r.save(ROSTER)
     from .drift import Change
     write_changelog(today, [Change("initial_load", counts_line(r), ["users.created", "sections.created"])], r,
