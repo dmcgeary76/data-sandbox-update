@@ -26,12 +26,15 @@ pytestmark = pytest.mark.skipif(not _browser_available(), reason="no Playwright 
 @pytest.fixture
 def setup(tmp_path):
     srv = serve()
-    cfg = load_config()
-    cfg["logins"]["portal_url_pattern"] = "/portal"
+    cfg = load_config()  # real login settings: Password click, two-step form, portal pattern
+    cfg["logins"]["portal_url_pattern"] = "/in/[^/?]+/(student|teacher)"
     cfg["logins"]["concurrency"] = 2
-    cfg["apps"][0]["expect_url"] = "/lantern-app"
-    cfg["apps"][0]["steps"] = [{"action": "click_text", "text": "Start"}]
-    cfg["apps"].append({"key": "other", "tile": "Other App", "weight": 1, "expect_url": "/other-app"})
+    cfg["apps"] = [
+        {"key": "lantern", "tile": "Lantern", "weight": 1, "expect_url": "/lantern-app",
+         "steps": [{"action": "click_text", "text": "Start"}]},
+        {"key": "devapp", "tile": "Lantern Learn - DEMO App", "weight": 1,
+         "expect_url": "/api/auth/callback\\?code="},
+    ]
     yield cfg, f"http://127.0.0.1:{srv.server_port}/in/demo", tmp_path
     srv.shutdown()
 
@@ -43,6 +46,22 @@ def test_login_and_launch(setup):
     assert r["ok"], r
     assert r["launches"][0]["url"].endswith("/lantern-app")
     assert not (out / "failures").exists()
+
+
+def test_teacher_portal(setup):
+    cfg, url, out = setup
+    [r] = asyncio.run(run_users(cfg, url, [{"id": "73079", "role": "teacher", "apps": ["lantern"]}], out))
+    assert r["ok"], r
+
+
+def test_launch_counts_when_app_callback_is_unreachable(setup):
+    """A dev app whose redirect URI is localhost: Clever's hand-off still counts."""
+    cfg, url, out = setup
+    [r] = asyncio.run(run_users(cfg, url, [{"id": "300899", "role": "student", "apps": ["devapp"]}], out))
+    assert r["ok"], r
+    launch = r["launches"][0]
+    assert "/api/auth/callback?code=" in launch["url"] and "abc123" not in launch["url"]
+    assert launch["app_page_loaded"] is False
 
 
 def test_failure_keeps_evidence(setup):

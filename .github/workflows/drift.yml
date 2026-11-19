@@ -1,11 +1,12 @@
 name: Daily roster drift
 
-# GitHub cron is UTC. 12:05 UTC is 5:05am PDT and 13:05 UTC is 5:05am PST, so one of
-# the two always lands at 5am Pacific. The job itself checks Pacific time and whether
-# today's drift already ran, so the other trigger exits in seconds.
+# GitHub cron is UTC and best-effort: runs can start late or be skipped when GitHub
+# is busy. This fires hourly from 12:05 to 17:05 UTC (5am-9am PT in PDT, 4am-9am in
+# PST). The job checks Pacific time and whether today's drift already ran, so only
+# the first trigger at or after 5am PT does any work; the rest exit in seconds.
 on:
   schedule:
-    - cron: "5 12,13 * * 1-5"
+    - cron: "5 12-17 * * 1-5"
   workflow_dispatch:
     inputs:
       force:
