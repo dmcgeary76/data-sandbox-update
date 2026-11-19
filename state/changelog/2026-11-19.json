@@ -1,0 +1,46 @@
+{
+ "date": "2026-11-19",
+ "title": "Daily drift",
+ "totals": "202 students, 12 teachers, 30 sections, 245 contacts in 120 families",
+ "expected_events": {
+  "sections.updated": 2,
+  "users.created": 5,
+  "users.deleted": 1,
+  "users.updated": 1
+ },
+ "changes": [
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Gabriel Carter (477794, grade 3); guardians: Judy Carter, Edward Carter, Francis Carter",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "emergency_contact_removed",
+   "summary": "Removed emergency contact Diana Rivera from the Rivera family",
+   "expected_events": [
+    "users.deleted"
+   ]
+  },
+  {
+   "kind": "guardian_added",
+   "summary": "Added grandparent Rachel Morales as an emergency contact for the Torres family",
+   "expected_events": [
+    "users.created"
+   ]
+  },
+  {
+   "kind": "guardian_contact_changed",
+   "summary": "Patricia Cortez updated their phone",
+   "expected_events": [
+    "users.updated"
+   ]
+  }
+ ]
+}

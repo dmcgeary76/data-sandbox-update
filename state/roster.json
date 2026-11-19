@@ -1,6 +1,6 @@
 {
  "counters": {
-  "household": 119
+  "household": 120
  },
  "households": {
   "H00001": {
@@ -206,16 +206,6 @@
      "phone_type": "Cell",
      "relationship": "Parent",
      "type": "Parent/Guardian"
-    },
-    {
-     "email": "dianarivera94@example.com",
-     "first": "Diana",
-     "id": "C866116",
-     "last": "Rivera",
-     "phone": "7075550104",
-     "phone_type": "Cell",
-     "relationship": "Grandparent",
-     "type": "Emergency"
     }
    ],
    "home_language": "English",
@@ -810,7 +800,7 @@
      "first": "Patricia",
      "id": "C927872",
      "last": "Cortez",
-     "phone": "5305550155",
+     "phone": "9165550144",
      "phone_type": "Cell",
      "relationship": "Parent",
      "type": "Parent/Guardian"
@@ -3094,6 +3084,16 @@
      "phone_type": "Cell",
      "relationship": "Parent",
      "type": "Parent/Guardian"
+    },
+    {
+     "email": "rachel.morales@example.net",
+     "first": "Rachel",
+     "id": "C456771",
+     "last": "Morales",
+     "phone": "5305550194",
+     "phone_type": "Cell",
+     "relationship": "Grandparent",
+     "type": "Emergency"
     }
    ],
    "home_language": "Spanish",
@@ -3850,10 +3850,52 @@
    "street": "5294 Alameda St",
    "surname": "Mora",
    "zip": "95403"
+  },
+  "H00120": {
+   "city": "Cedar Valley",
+   "group": "white",
+   "guardians": [
+    {
+     "email": "judycarter86@example.com",
+     "first": "Judy",
+     "id": "C958907",
+     "last": "Carter",
+     "phone": "9165550163",
+     "phone_type": "Cell",
+     "relationship": "Parent",
+     "type": "Parent/Guardian"
+    },
+    {
+     "email": "edward.carter@example.org",
+     "first": "Edward",
+     "id": "C272181",
+     "last": "Carter",
+     "phone": "7075550195",
+     "phone_type": "Cell",
+     "relationship": "Parent",
+     "type": "Parent/Guardian"
+    },
+    {
+     "email": "fcarter92@example.com",
+     "first": "Francis",
+     "id": "C736302",
+     "last": "Carter",
+     "phone": "5305550150",
+     "phone_type": "Cell",
+     "relationship": "Grandparent",
+     "type": "Emergency"
+    }
+   ],
+   "home_language": "English",
+   "id": "H00120",
+   "state": "CA",
+   "street": "7015 Meadow Ln",
+   "surname": "Carter",
+   "zip": "95407"
   }
  },
- "last_drift_date": "2026-11-18",
- "last_upload_at": "2026-11-18T16:16:36+00:00",
+ "last_drift_date": "2026-11-19",
+ "last_upload_at": "2026-11-19T14:04:01+00:00",
  "schema_version": 1,
  "sections": {
   "ES01-HR-1": {
@@ -3953,7 +3995,8 @@
     "619737",
     "692158",
     "361607",
-    "677298"
+    "677298",
+    "477794"
    ],
    "subject": "Homeroom/advisory",
    "teacher_id": "73420"
@@ -4157,7 +4200,8 @@
     "619737",
     "692158",
     "361607",
-    "677298"
+    "677298",
+    "477794"
    ],
    "subject": "Math",
    "teacher_id": "73420"
@@ -6952,6 +6996,28 @@
    "school_id": "ES01",
    "state_id": "4565347241"
   },
+  "477794": {
+   "created_on": "2026-11-19",
+   "dob": "2018-08-31",
+   "ell": "N",
+   "email": "gcarter794@students.cedarvalleyusd.example",
+   "first": "Gabriel",
+   "frl": "F",
+   "gender": "M",
+   "gifted": "N",
+   "grade": "3",
+   "hispanic": "N",
+   "household_id": "H00120",
+   "id": "477794",
+   "iep": "N",
+   "last": "Carter",
+   "middle": "A",
+   "preferred_first": "Gabe",
+   "race": "W",
+   "s504": "N",
+   "school_id": "ES01",
+   "state_id": "4995460215"
+  },
   "483160": {
    "created_on": "2026-11-18",
    "dob": "2014-08-14",
@@ -9632,6 +9698,7 @@
   "471522",
   "472871",
   "473307",
+  "477794",
   "483160",
   "483508",
   "484255",
@@ -9800,6 +9867,7 @@
   "C260828",
   "C263124",
   "C266704",
+  "C272181",
   "C273206",
   "C277561",
   "C277594",
@@ -9851,6 +9919,7 @@
   "C450186",
   "C451572",
   "C452398",
+  "C456771",
   "C459410",
   "C465977",
   "C467123",
@@ -9923,6 +9992,7 @@
   "C732164",
   "C732539",
   "C733000",
+  "C736302",
   "C736361",
   "C746770",
   "C748302",
@@ -9984,6 +10054,7 @@
   "C944378",
   "C946057",
   "C953712",
+  "C958907",
   "C960103",
   "C961413",
   "C961966",
