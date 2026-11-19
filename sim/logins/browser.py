@@ -51,39 +51,114 @@ async def _find_tile(page: Page, tile: str):
     raise PWTimeout(f"app tile {tile!r} not found on the portal")
 
 
+async def _enabled(loc, timeout_ms: int) -> bool:
+    deadline = time.monotonic() + timeout_ms / 1000
+    while time.monotonic() < deadline:
+        try:
+            if await loc.is_enabled():
+                return True
+        except Exception:
+            pass
+        await asyncio.sleep(0.2)
+    return False
+
+
+async def _fill_and_submit(page: Page, field, value: str, submit_selectors: list[str]) -> None:
+    """Fill a field and press the form's submit button.
+
+    Clever's login form is a React app. A value filled in before the page finishes
+    wiring up the field never reaches React, and the submit button stays disabled.
+    When that happens, retype the value key by key, the way a person would.
+    """
+    await field.click()
+    await field.fill(value)
+    submit = await _first_visible(page, submit_selectors)
+    if not await _enabled(submit, 2_000):
+        await field.fill("")
+        await field.press_sequentially(value, delay=60)
+        if not await _enabled(submit, 5_000):
+            raise PWTimeout("the submit button stayed disabled after entering the value")
+    await submit.click()
+
+
 async def login(page: Page, lc: dict, login_url: str, username: str, password: str) -> None:
     await page.goto(login_url, wait_until="domcontentloaded")
     for text in lc.get("pre_login_clicks", []):
-        await page.get_by_text(text, exact=False).first.click()
-    user = await _first_visible(page, lc["username_selectors"])
-    await user.fill(username)
-    # Some login pages ask for the password on a second screen.
+        await page.get_by_text(text, exact=True).first.click()
+    user = await _first_visible(page, lc["username_selectors"], timeout_ms=15_000)
+    # Some login pages ask for the password on a second screen (Clever does: username, Next, password).
     try:
-        pw = await _first_visible(page, lc["password_selectors"], timeout_ms=2_000)
+        pw = await _first_visible(page, lc["password_selectors"], timeout_ms=1_000)
+        await user.fill(username)
     except PWTimeout:
-        await (await _first_visible(page, lc["submit_selectors"])).click()
-        pw = await _first_visible(page, lc["password_selectors"])
-    await pw.fill(password)
-    await (await _first_visible(page, lc["submit_selectors"])).click()
+        await _fill_and_submit(page, user, username, lc["submit_selectors"])
+        pw = await _first_visible(page, lc["password_selectors"], timeout_ms=15_000)
+    await _fill_and_submit(page, pw, password, lc["submit_selectors"])
     await page.wait_for_url(re.compile(lc["portal_url_pattern"]), timeout=30_000)
     await page.wait_for_load_state("networkidle", timeout=15_000)
 
 
+def _redact(url: str) -> str:
+    return re.sub(r"\b(code|state|token)=[^&]+", r"\1=…", url)[:300]
+
+
 async def launch_app(page: Page, app: dict, shots: Path, tag: str) -> dict:
+    """Click an app tile and confirm Clever handed the user to the app.
+
+    Success means a navigation matching `expect_url` happened, e.g. Clever's redirect
+    to the app's OAuth callback with a login code. That is checked on the requests
+    themselves, so it holds even if the app's page then fails to load (for example a
+    dev app whose redirect URI is localhost). Steps only run if the app page loaded.
+    """
     tile = await _find_tile(page, app["tile"])
     started = time.monotonic()
-    target = page
+    pattern = re.compile(app["expect_url"])
+    seen: list[str] = []
+    failed: list[str] = []
+
+    def on_request(req):
+        if req.is_navigation_request():
+            seen.append(req.url)
+
+    def on_failed(req):
+        if req.is_navigation_request():
+            failed.append(req.url)
+
+    page.context.on("request", on_request)
+    page.context.on("requestfailed", on_failed)
     try:
-        async with page.context.expect_page(timeout=8_000) as new_page:
-            await tile.click()
-        target = await new_page.value
-    except PWTimeout:
-        target = page  # tile opened in the same tab
-    await target.wait_for_url(re.compile(app["expect_url"]), timeout=45_000)
-    await target.wait_for_load_state("domcontentloaded")
-    for step in app.get("steps", []):
-        await run_step(target, step, shots, tag)
-    result = {"app": app["key"], "ok": True, "url": target.url, "seconds": round(time.monotonic() - started, 1)}
+        target = page
+        try:
+            async with page.context.expect_page(timeout=8_000) as new_page:
+                await tile.click()
+            target = await new_page.value
+        except PWTimeout:
+            target = page  # tile opened in the same tab
+        deadline = time.monotonic() + 45
+        hit = None
+        while time.monotonic() < deadline and not hit:
+            hit = next((u for u in seen if pattern.search(u)), None) or (
+                target.url if pattern.search(target.url) else None)
+            if not hit:
+                await asyncio.sleep(0.3)
+        if not hit:
+            raise PWTimeout(f"never reached {app['expect_url']!r}; last URLs: {[_redact(u) for u in seen[-3:]]}")
+        try:
+            await target.wait_for_load_state("domcontentloaded", timeout=15_000)
+        except PWTimeout:
+            pass
+        await asyncio.sleep(0.5)
+    finally:
+        page.context.remove_listener("request", on_request)
+        page.context.remove_listener("requestfailed", on_failed)
+
+    app_loaded = not (failed and seen and failed[-1] == seen[-1]) and \
+        not target.url.startswith(("chrome-error:", "about:blank"))
+    if app_loaded:
+        for step in app.get("steps", []):
+            await run_step(target, step, shots, tag)
+    result = {"app": app["key"], "ok": True, "url": _redact(hit), "app_page_loaded": app_loaded,
+              "seconds": round(time.monotonic() - started, 1)}
     # Linger briefly, as a person would, then return to the portal.
     await target.wait_for_timeout(random.randint(3_000, 9_000))
     if target is not page:

@@ -118,17 +118,22 @@ logins:
     - 'button:has-text("Log in")'
     - 'button:has-text("Sign in")'
   # Optional clicks before the username field appears (e.g. an identity provider button).
-  pre_login_clicks: []
-  # A URL fragment (or regex) that means "we're on the Clever Portal".
-  portal_url_pattern: "clever.com/(in/|portal|home)"
+  pre_login_clicks: ["Password"]
+  # Regex for the Clever Portal URL: clever.com/in/<district>/student/portal for students,
+  # clever.com/in/<district>/teacher for teachers.
+  portal_url_pattern: "clever\\.com/in/[^/?]+/(student|teacher|staff|school-admin|district-admin)"
 
-# Apps users launch from the portal. `tile` is the visible name of the tile.
-# `expect_url` is a regex the launched app's URL must match to count as success.
-# `steps` (optional) run after the app loads. Supported actions:
+# Apps users launch from the portal. `tile` is the tile's visible name.
+# `expect_url` is a regex; the launch counts as successful once the browser is sent to
+# a URL matching it. Matching the app's OAuth callback with a code means Clever
+# completed the login hand-off, even if the app's own page can't load.
+# `steps` (optional) run only if the app page loads. Supported actions:
 # click_text, click_selector, wait_ms, wait_for_selector, screenshot.
 apps:
   - key: lantern
-    tile: "Lantern"
+    tile: "Lantern Learn - DEMO App"
     weight: 1.0
-    expect_url: "lantern"
+    # Lantern's redirect URI is currently http://localhost:3100/api/auth/callback,
+    # so the app page itself won't load from GitHub; Clever's hand-off still happens.
+    expect_url: "/api/auth/callback\\?code="
     steps: []
