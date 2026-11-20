@@ -1,0 +1,82 @@
+{
+ "date": "2026-11-20",
+ "title": "Daily drift",
+ "totals": "201 students, 11 teachers, 30 sections, 245 contacts in 120 families",
+ "expected_events": {
+  "sections.updated": 17,
+  "users.created": 3,
+  "users.deleted": 5,
+  "users.updated": 2
+ },
+ "changes": [
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Emma Lee (326148, grade 5, ES01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Aaron Ross (518872, grade 8, MS01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "users.deleted",
+    "users.deleted"
+   ]
+  },
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Charles Martin (635641, grade 6); guardians: Juan Martin, Patricia Martin",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "teacher_departed",
+   "summary": "Katherine Norton (Science Teacher, MS01) left; Jessica Rodgers covers their sections until the position is filled",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "preferred_name",
+   "summary": "Samuel Velasquez now goes by Sam",
+   "expected_events": [
+    "users.updated"
+   ]
+  },
+  {
+   "kind": "elective_switch",
+   "summary": "Chloe Howard switched from Physical Education to Art",
+   "expected_events": [
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "guardian_contact_changed",
+   "summary": "Jessica Washington updated their email",
+   "expected_events": [
+    "users.updated"
+   ]
+  }
+ ]
+}

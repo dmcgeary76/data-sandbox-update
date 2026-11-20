@@ -1,0 +1,19 @@
+{
+ "baseline": false,
+ "last_event_id": "6aff0517d484a2125bc504eb",
+ "counts": {
+  "districts.updated": 1,
+  "sections.updated": 2,
+  "users.created": 5,
+  "users.deleted": 1,
+  "users.updated": 1
+ },
+ "total": 10,
+ "samples": {
+  "districts.updated": "#DEMO Cedar Valley Unified",
+  "users.created": "Gabriel Carter",
+  "users.updated": "Patricia Cortez",
+  "sections.updated": "Homeroom - Page - HR",
+  "users.deleted": "Diana Rivera"
+ }
+}

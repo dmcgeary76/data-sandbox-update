@@ -1,6 +1,6 @@
 {
  "counters": {
-  "household": 120
+  "household": 121
  },
  "households": {
   "H00001": {
@@ -1788,7 +1788,7 @@
    "group": "white",
    "guardians": [
     {
-     "email": "jessicawashington4@example.com",
+     "email": "jwashington70@example.org",
      "first": "Jessica",
      "id": "C370287",
      "last": "Washington",
@@ -1910,38 +1910,6 @@
    "street": "1887 Sycamore Dr",
    "surname": "Nelson",
    "zip": "95404"
-  },
-  "H00060": {
-   "city": "Cedar Valley",
-   "group": "white",
-   "guardians": [
-    {
-     "email": "amy.smith@example.com",
-     "first": "Amy",
-     "id": "C978645",
-     "last": "Smith",
-     "phone": "9165550185",
-     "phone_type": "Home",
-     "relationship": "Parent",
-     "type": "Parent/Guardian"
-    },
-    {
-     "email": "tross72@example.net",
-     "first": "Travis",
-     "id": "C519399",
-     "last": "Ross",
-     "phone": "5305550162",
-     "phone_type": "Work",
-     "relationship": "Parent",
-     "type": "Parent/Guardian"
-    }
-   ],
-   "home_language": "English",
-   "id": "H00060",
-   "state": "CA",
-   "street": "790 Redwood Dr Apt 21",
-   "surname": "Ross",
-   "zip": "95403"
   },
   "H00061": {
    "city": "Cedar Valley",
@@ -3892,10 +3860,42 @@
    "street": "7015 Meadow Ln",
    "surname": "Carter",
    "zip": "95407"
+  },
+  "H00121": {
+   "city": "Cedar Valley",
+   "group": "white",
+   "guardians": [
+    {
+     "email": "",
+     "first": "Juan",
+     "id": "C117219",
+     "last": "Martin",
+     "phone": "7075550188",
+     "phone_type": "Home",
+     "relationship": "Parent",
+     "type": "Parent/Guardian"
+    },
+    {
+     "email": "patriciamartin77@example.org",
+     "first": "Patricia",
+     "id": "C188170",
+     "last": "Martin",
+     "phone": "7075550129",
+     "phone_type": "Cell",
+     "relationship": "Grandparent",
+     "type": "Emergency"
+    }
+   ],
+   "home_language": "English",
+   "id": "H00121",
+   "state": "CA",
+   "street": "692 Mission Cir",
+   "surname": "Martin",
+   "zip": "95403"
   }
  },
- "last_drift_date": "2026-11-19",
- "last_upload_at": "2026-11-19T14:04:01+00:00",
+ "last_drift_date": "2026-11-20",
+ "last_upload_at": "2026-11-20T19:58:07+00:00",
  "schema_version": 1,
  "sections": {
   "ES01-HR-1": {
@@ -4057,7 +4057,6 @@
     "396604",
     "675384",
     "365842",
-    "326148",
     "471522",
     "526366",
     "640110",
@@ -4262,7 +4261,6 @@
     "396604",
     "675384",
     "365842",
-    "326148",
     "471522",
     "526366",
     "640110",
@@ -4333,7 +4331,8 @@
     "652818",
     "566641",
     "463372",
-    "305038"
+    "305038",
+    "500153"
    ],
    "subject": "Arts and music",
    "teacher_id": "81376"
@@ -4436,7 +4435,8 @@
     "426976",
     "653776",
     "463372",
-    "305038"
+    "305038",
+    "635641"
    ],
    "subject": "English/language arts",
    "teacher_id": "88347"
@@ -4513,7 +4513,6 @@
     "413896",
     "406174",
     "652889",
-    "518872",
     "352681",
     "360388",
     "389937",
@@ -4568,7 +4567,8 @@
     "426976",
     "653776",
     "463372",
-    "305038"
+    "305038",
+    "635641"
    ],
    "subject": "Math",
    "teacher_id": "79499"
@@ -4645,7 +4645,6 @@
     "413896",
     "406174",
     "652889",
-    "518872",
     "352681",
     "360388",
     "389937",
@@ -4678,14 +4677,14 @@
     "624777",
     "362122",
     "355957",
-    "500153",
     "483508",
     "513493",
     "347337",
     "373111",
     "323689",
     "426976",
-    "653776"
+    "653776",
+    "635641"
    ],
    "subject": "PE and health",
    "teacher_id": "77212"
@@ -4739,7 +4738,6 @@
     "549025",
     "568931",
     "413896",
-    "518872",
     "360388",
     "380478",
     "511272",
@@ -4788,10 +4786,11 @@
     "426976",
     "653776",
     "463372",
-    "305038"
+    "305038",
+    "635641"
    ],
    "subject": "Science",
-   "teacher_id": "73079"
+   "teacher_id": "88431"
   },
   "MS01-SCI-7": {
    "course_code": "SCI",
@@ -4835,7 +4834,7 @@
     "531840"
    ],
    "subject": "Science",
-   "teacher_id": "73079"
+   "teacher_id": "88431"
   },
   "MS01-SCI-8": {
    "course_code": "SCI",
@@ -4865,7 +4864,6 @@
     "413896",
     "406174",
     "652889",
-    "518872",
     "352681",
     "360388",
     "389937",
@@ -4879,7 +4877,7 @@
     "433793"
    ],
    "subject": "Science",
-   "teacher_id": "73079"
+   "teacher_id": "88431"
   },
   "MS01-SS-6": {
    "course_code": "SS",
@@ -4920,7 +4918,8 @@
     "426976",
     "653776",
     "463372",
-    "305038"
+    "305038",
+    "635641"
    ],
    "subject": "Social studies",
    "teacher_id": "88431"
@@ -4997,7 +4996,6 @@
     "413896",
     "406174",
     "652889",
-    "518872",
     "352681",
     "360388",
     "389937",
@@ -5367,28 +5365,6 @@
    "s504": "N",
    "school_id": "ES01",
    "state_id": "5320540974"
-  },
-  "326148": {
-   "created_on": "2026-11-18",
-   "dob": "2014-10-09",
-   "ell": "N",
-   "email": "elee148@students.cedarvalleyusd.example",
-   "first": "Emma",
-   "frl": "N",
-   "gender": "F",
-   "gifted": "Y",
-   "grade": "5",
-   "hispanic": "N",
-   "household_id": "H00072",
-   "id": "326148",
-   "iep": "N",
-   "last": "Lee",
-   "middle": "",
-   "preferred_first": "",
-   "race": "W",
-   "s504": "N",
-   "school_id": "ES01",
-   "state_id": "6822700286"
   },
   "327331": {
    "created_on": "2026-11-18",
@@ -7546,28 +7522,6 @@
    "school_id": "MS01",
    "state_id": "1114815530"
   },
-  "518872": {
-   "created_on": "2026-11-18",
-   "dob": "2013-06-26",
-   "ell": "N",
-   "email": "aross872@students.cedarvalleyusd.example",
-   "first": "Aaron",
-   "frl": "N",
-   "gender": "M",
-   "gifted": "N",
-   "grade": "8",
-   "hispanic": "N",
-   "household_id": "H00060",
-   "id": "518872",
-   "iep": "Y",
-   "last": "Ross",
-   "middle": "H",
-   "preferred_first": "",
-   "race": "W",
-   "s504": "N",
-   "school_id": "MS01",
-   "state_id": "3962633370"
-  },
   "523427": {
    "created_on": "2026-11-18",
    "dob": "2017-07-27",
@@ -8332,7 +8286,7 @@
    "iep": "N",
    "last": "Velasquez",
    "middle": "J",
-   "preferred_first": "",
+   "preferred_first": "Sam",
    "race": "W",
    "s504": "N",
    "school_id": "ES01",
@@ -8711,6 +8665,28 @@
    "s504": "N",
    "school_id": "ES01",
    "state_id": "7698071204"
+  },
+  "635641": {
+   "created_on": "2026-11-20",
+   "dob": "2014-05-22",
+   "ell": "N",
+   "email": "cmartin641@students.cedarvalleyusd.example",
+   "first": "Charles",
+   "frl": "F",
+   "gender": "M",
+   "gifted": "N",
+   "grade": "6",
+   "hispanic": "N",
+   "household_id": "H00121",
+   "id": "635641",
+   "iep": "N",
+   "last": "Martin",
+   "middle": "",
+   "preferred_first": "",
+   "race": "W",
+   "s504": "N",
+   "school_id": "MS01",
+   "state_id": "4608413430"
   },
   "636795": {
    "created_on": "2026-11-18",
@@ -9462,18 +9438,6 @@
   }
  },
  "teachers": {
-  "73079": {
-   "created_on": "2026-11-18",
-   "email": "katherine.norton@cedarvalleyusd.example",
-   "first": "Katherine",
-   "id": "73079",
-   "last": "Norton",
-   "middle": "M",
-   "role_key": "MS01:subject:SCI",
-   "school_id": "MS01",
-   "state_id": "30163361",
-   "title": "Science Teacher"
-  },
   "73420": {
    "created_on": "2026-11-18",
    "email": "charles.page@cedarvalleyusd.example",
@@ -9776,6 +9740,7 @@
   "625476",
   "627903",
   "633520",
+  "635641",
   "636795",
   "638526",
   "638902",
@@ -9827,6 +9792,7 @@
   "C109609",
   "C111831",
   "C112148",
+  "C117219",
   "C119298",
   "C137582",
   "C138748",
@@ -9840,6 +9806,7 @@
   "C170034",
   "C171350",
   "C177915",
+  "C188170",
   "C188477",
   "C191907",
   "C198429",
@@ -10069,5 +10036,7 @@
   "C997095",
   "C997906"
  ],
- "vacancies": []
+ "vacancies": [
+  "MS01:subject:SCI"
+ ]
 }
