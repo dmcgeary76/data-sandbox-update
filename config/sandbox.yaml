@@ -88,7 +88,7 @@ logins:
   # exist on the portal (they can only be added after the first sync creates the
   # users). Manual runs with a batch number still work while paused, for testing.
   # Drift is unaffected and runs on schedule either way.
-  enabled: false
+  enabled: true
   days: weekdays
   # Pacific-time hours when a login batch is due. A batch that GitHub starts late
   # still runs (catch-up). Each batch takes its share of the day's users.
