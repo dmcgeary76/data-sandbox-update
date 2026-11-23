@@ -1,0 +1,42 @@
+{
+ "date": "2026-11-23",
+ "batch": 2,
+ "ran_at": "2026-11-23T21:32:12+00:00",
+ "users": 40,
+ "succeeded": 39,
+ "launches": {
+  "lantern": 39
+ },
+ "app_syncs": [
+  {
+   "app": "lantern",
+   "ok": true,
+   "mode": "live",
+   "counts": {
+    "districts": 1,
+    "schools": 3,
+    "academicSessions": 1,
+    "courses": 30,
+    "sections": 30,
+    "users": 212,
+    "enrollments": 693
+   },
+   "warnings": [
+    "Skipping user 6afdd0b8a5270dd4988b525d: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized).",
+    "Skipping user 6afdd0b8a5270dd4988b525e: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized).",
+    "Skipping user 6afdd0b8a5270dd4988b525f: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized).",
+    "Skipping user 6afdd0b8a5270dd4988b5260: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized).",
+    "Skipping user 6afdd0b8a5270dd4988b5261: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized)."
+   ],
+   "detail": "districts 1, schools 3, academicSessions 1, courses 30, sections 30, users 212, enrollments 693"
+  }
+ ],
+ "failures": [
+  {
+   "id": "453914",
+   "role": "student",
+   "error": "TimeoutError: none of these selectors became visible: ['input[name=\"password\"]', 'input[type=\"password\"]']",
+   "url": "https://clever.com/oauth/sis/login/username?target=NmFmZGJmOGZmNmVhYmY3YmY1MzBhOTMz%3BNGM2M2MxY2Y2MjNkY2U4MmNhYWM%3D%3BaHR0cHM6Ly9jbGV2ZXIuY29tL2luL2F1dGhfY2FsbGJhY2s%3D%3BYjYzM2Q0ZjZhNGRjZWIxOTllNTc1MzNlNjg4YzNlOWVkZWRjODkyYjEyM2M2OWEwMGI3NWIyYTJjYjdkMWM5MQ%3D%3D%3BY29kZQ%3D%3D%3B"
+  }
+ ]
+}
