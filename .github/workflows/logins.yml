@@ -36,8 +36,8 @@ jobs:
       LANTERN_SYNC_URL: ${{ secrets.LANTERN_SYNC_URL }}
       LANTERN_SYNC_SECRET: ${{ secrets.LANTERN_SYNC_SECRET }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -54,7 +54,7 @@ jobs:
 
       - name: Cache browser
         if: steps.due.outputs.due == 'true' && !inputs.dry_run
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
@@ -73,7 +73,7 @@ jobs:
 
       - name: Keep screenshots and traces of failures
         if: always() && hashFiles('artifacts/**') != ''
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: login-failures-${{ github.run_id }}
           path: artifacts/
