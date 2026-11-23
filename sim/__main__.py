@@ -187,7 +187,7 @@ def cmd_plan(a, cfg):
 
 
 def cmd_logins(a, cfg):
-    from .logins.plan import completed_batches, load_or_create_plan, run_dir
+    from .logins.plan import completed_batches, load_or_create_plan, run_dir, still_enrolled
     from .schedule import due_login_batches, now_pt
     r = load_roster()
     now = now_pt(a.now)
@@ -214,7 +214,10 @@ def cmd_logins(a, cfg):
             summary("### App roster syncs\n" + "\n".join(
                 f"- {'✅' if x['ok'] else '⚠️'} **{x['app']}**: {x['detail']}" for x in app_syncs))
     for b in batches:
-        users = [u for u in plan["users"] if u["batch"] == b]
+        users, gone = still_enrolled([u for u in plan["users"] if u["batch"] == b], r)
+        if gone:
+            print(f"Skipping {len(gone)} planned user(s) no longer on the roster: "
+                  + ", ".join(f"{u['role']} {u['id']}" for u in gone))
         if a.limit:
             users = users[: a.limit]
         print(f"Batch {b}: {len(users)} users")
