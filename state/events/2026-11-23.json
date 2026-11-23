@@ -1,0 +1,19 @@
+{
+ "baseline": false,
+ "last_event_id": "6b00a7c1a918b1478fc34587",
+ "counts": {
+  "districts.updated": 1,
+  "sections.updated": 14,
+  "users.created": 3,
+  "users.deleted": 5,
+  "users.updated": 3
+ },
+ "total": 26,
+ "samples": {
+  "districts.updated": "#DEMO Cedar Valley Unified",
+  "users.created": "Charles Martin",
+  "users.updated": "April Lee",
+  "sections.updated": "Homeroom - Short - HR",
+  "users.deleted": "Emma Lee"
+ }
+}

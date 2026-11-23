@@ -1,0 +1,95 @@
+{
+ "date": "2026-11-23",
+ "title": "Daily drift",
+ "totals": "201 students, 12 teachers, 30 sections, 246 contacts in 121 families",
+ "expected_events": {
+  "sections.updated": 11,
+  "users.created": 8,
+  "users.deleted": 6,
+  "users.updated": 3
+ },
+ "changes": [
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Mateo Ochoa (453914, grade Kindergarten, ES01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Maverick Flores (403094, grade 1, ES01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated",
+    "users.deleted",
+    "users.deleted",
+    "users.deleted"
+   ]
+  },
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Melanie Chavez (657534, grade 5); guardians: Miguel Chavez, Maria Valdez, Elizabeth Chavez",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Renata Sandoval (559939, grade Kindergarten); guardians: Yesenia Sandoval, Troy Sandoval",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "teacher_hired",
+   "summary": "Hired Sandra Wilson (82223) as Science Teacher at MS01, taking over 3 sections",
+   "expected_events": [
+    "users.created",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "program_status",
+   "summary": "Sadie Kim: IEP started",
+   "expected_events": [
+    "users.updated"
+   ]
+  },
+  {
+   "kind": "guardian_contact_changed",
+   "summary": "Hui Reddy updated their phone",
+   "expected_events": [
+    "users.updated"
+   ]
+  },
+  {
+   "kind": "emergency_contact_removed",
+   "summary": "Removed emergency contact Rachel Morales from the Torres family",
+   "expected_events": [
+    "users.deleted"
+   ]
+  },
+  {
+   "kind": "preferred_name",
+   "summary": "Samuel Velasquez no longer goes by Sam",
+   "expected_events": [
+    "users.updated"
+   ]
+  }
+ ]
+}
