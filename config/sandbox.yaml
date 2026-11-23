@@ -124,16 +124,17 @@ logins:
   portal_url_pattern: "clever\\.com/in/[^/?]+/(student|teacher|staff|school-admin|district-admin)"
 
 # Apps users launch from the portal. `tile` is the tile's visible name.
-# `expect_url` is a regex; the launch counts as successful once the browser is sent to
-# a URL matching it. Matching the app's OAuth callback with a code means Clever
-# completed the login hand-off, even if the app's own page can't load.
+# `expect_url` is a regex; the launch counts once the browser is sent to a URL matching
+# it. Matching the app's OAuth callback with a code means Clever completed the login
+# hand-off. `fail_url` (optional) is a regex for the app's own sign-in error page: if
+# the app redirects there, the launch is reported as failed with that URL.
 # `steps` (optional) run only if the app page loads. Supported actions:
 # click_text, click_selector, wait_ms, wait_for_selector, screenshot.
 apps:
   - key: lantern
     tile: "Lantern Learn - DEMO App"
     weight: 1.0
-    # Lantern's redirect URI is currently http://localhost:3100/api/auth/callback,
-    # so the app page itself won't load from GitHub; Clever's hand-off still happens.
+    # Redirect URI: https://lantern.edtecharchitect.com/api/auth/callback
     expect_url: "/api/auth/callback\\?code="
+    fail_url: "/login/error"
     steps: []

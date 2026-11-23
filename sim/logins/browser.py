@@ -98,6 +98,10 @@ async def login(page: Page, lc: dict, login_url: str, username: str, password: s
     await page.wait_for_load_state("networkidle", timeout=15_000)
 
 
+class AppRejectedLogin(Exception):
+    """Clever handed the user to the app, but the app showed its own sign-in error."""
+
+
 def _redact(url: str) -> str:
     return re.sub(r"\b(code|state|token)=[^&]+", r"\1=…", url)[:300]
 
@@ -154,6 +158,15 @@ async def launch_app(page: Page, app: dict, shots: Path, tag: str) -> dict:
 
     app_loaded = not (failed and seen and failed[-1] == seen[-1]) and \
         not target.url.startswith(("chrome-error:", "about:blank"))
+    if app_loaded and app.get("fail_url"):
+        # The app may accept Clever's hand-off and then send the user to its own error
+        # page (e.g. no matching account). Give its redirects a few seconds to settle.
+        fail = re.compile(app["fail_url"])
+        settle = time.monotonic() + 6
+        while time.monotonic() < settle and not fail.search(target.url):
+            await asyncio.sleep(0.3)
+        if fail.search(target.url):
+            raise AppRejectedLogin(f"{app['key']} rejected the login: {_redact(target.url)}")
     if app_loaded:
         for step in app.get("steps", []):
             await run_step(target, step, shots, tag)

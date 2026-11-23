@@ -28,6 +28,7 @@ PASSWORD = """<html><body><form method=post action=/login>
 PORTAL = """<html><body><h1>Portal</h1>
 <a href="/lantern-app" target="_blank" aria-label="Lantern">Lantern</a>
 <a href="http://127.0.0.1:9/api/auth/callback?code=abc123" target="_blank">Lantern Learn - DEMO App</a>
+<a href="/api/auth/callback?code=xyz" target="_blank">Strict App</a>
 <a href="/other-app">Other App</a></body></html>"""
 APP = "<html><body><h1>Welcome to Lantern</h1><button>Start</button></body></html>"
 
@@ -54,6 +55,10 @@ class H(BaseHTTPRequestHandler):
             return self._send(PORTAL)
         if path == "/lantern-app":
             return self._send(APP)
+        if path == "/api/auth/callback":  # accepts the code, then has no matching account
+            return self._send("", 302, {"Location": "/login/error?reason=no_match"})
+        if path == "/login/error":
+            return self._send("<h1>We couldn't sign you in</h1>")
         self._send("not found", 404)
 
     def do_POST(self):
