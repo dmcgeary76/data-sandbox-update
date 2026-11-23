@@ -56,3 +56,14 @@ def test_plan_fraction_and_eligibility():
     assert newest.id not in {u["id"] for u in p["users"]}, "brand-new students wait a day"
     assert build_plan(cfg, r, date(2026, 11, 18)) == p
     assert {u["batch"] for u in p["users"]} == {0, 1, 2, 3}
+
+
+def test_batches_skip_users_removed_after_planning():
+    from sim.logins.plan import still_enrolled
+    r = generate(cfg, date(2026, 11, 10))
+    p = build_plan(cfg, r, date(2026, 11, 18))
+    victim = next(u for u in p["users"] if u["role"] == "student")
+    del r.students[victim["id"]]
+    keep, gone = still_enrolled(p["users"], r)
+    assert gone == [victim]
+    assert len(keep) == len(p["users"]) - 1

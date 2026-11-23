@@ -47,6 +47,19 @@ def build_plan(cfg: dict, roster: Roster, day: date) -> dict:
             "users": users}
 
 
+def still_enrolled(users: list[dict], roster: Roster) -> tuple[list[dict], list[dict]]:
+    """Split planned users into those still on the roster and those removed since.
+
+    The day's plan is saved by the first batch. If drift runs after that (GitHub
+    started it late, or a manual run came first), a withdrawn student or departed
+    teacher may still be in the plan, but Clever has deleted their account.
+    """
+    present = set(roster.students) | set(roster.teachers)
+    keep = [u for u in users if u["id"] in present]
+    gone = [u for u in users if u["id"] not in present]
+    return keep, gone
+
+
 def run_dir(state_dir: Path, day: date) -> Path:
     return state_dir / "runs" / day.isoformat()
 
