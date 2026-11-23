@@ -86,6 +86,63 @@ tiles can only be added once the first sync has created the users. Drift runs on
 
 After that, it runs on its own. Set it back to `false` any time to pause logins without touching drift.
 
+## Reliable scheduling from a server
+
+GitHub's schedule is best-effort. In practice it starts each scheduled workflow
+about once a day, often hours late. For on-time runs, let a server you control
+(such as the Lantern VPS) start the workflows through GitHub's API. GitHub still runs
+them and keeps the logs; the server only presses "Run workflow" at the right times.
+The GitHub schedules stay on as a backup, and the jobs' guards prevent double runs.
+
+`scripts/vps-cron.sh` runs hourly from cron. On weekdays it starts drift at 5am PT and
+logins at 8am, 10am, noon and 2pm PT, whatever the server's timezone. If you change
+`drift.run_hour_pt` or `logins.batch_hours_pt`, change the hours at the top of the script too.
+
+**1. Create a GitHub token** for this repo only: GitHub → Settings → Developer settings →
+Personal access tokens → **Fine-grained tokens** → Generate new token.
+- Repository access: **Only select repositories** → `data-sandbox-update`
+- Repository permissions: **Actions: Read and write**, **Contents: Read-only**
+- Expiration: up to a year; set a reminder to renew it.
+
+**2. On the server**, save the token where only root can read it:
+
+```bash
+mkdir -p /etc/sandbox-sim && chmod 700 /etc/sandbox-sim
+```
+```bash
+nano /etc/sandbox-sim/github-token
+```
+```bash
+chmod 600 /etc/sandbox-sim/github-token
+```
+
+**3. Install the script** (downloads it from this repo with the same token):
+
+```bash
+curl -fsSL -H "Authorization: Bearer $(cat /etc/sandbox-sim/github-token)" -H "Accept: application/vnd.github.raw" https://api.github.com/repos/dmcgeary76/data-sandbox-update/contents/scripts/vps-cron.sh -o /usr/local/bin/sandbox-sim-cron && chmod +x /usr/local/bin/sandbox-sim-cron
+```
+
+**4. Test it without starting anything.** This should print `would start logins.yml`:
+
+```bash
+SIM_DRY_RUN=1 SIM_FAKE_HOUR=8 SIM_FAKE_WEEKDAY=1 sandbox-sim-cron
+```
+
+**5. Schedule it** at two minutes past every hour:
+
+```bash
+(crontab -l 2>/dev/null; echo '2 * * * * /usr/local/bin/sandbox-sim-cron >> /var/log/sandbox-sim-cron.log 2>&1') | crontab -
+```
+
+**6. Check it** after the next 5am, 8am, 10am, noon or 2pm PT mark. You'll see a `started …` line here
+and a new "workflow_dispatch" run in the Actions tab:
+
+```bash
+tail /var/log/sandbox-sim-cron.log
+```
+
+To stop it, remove the line with `crontab -e`.
+
 ## Configuring
 
 All knobs live in `config/sandbox.yaml`: grade sizes, demographics, drift rates and bands, login
