@@ -206,6 +206,13 @@ def cmd_logins(a, cfg):
         return
     plan = load_or_create_plan(cfg, r, day, STATE_DIR, save=not a.dry_run)
     sec = Secrets.from_env()
+    app_syncs = []
+    if not a.dry_run:
+        from .appsync import run_app_syncs
+        app_syncs = run_app_syncs(cfg)
+        if app_syncs:
+            summary("### App roster syncs\n" + "\n".join(
+                f"- {'✅' if x['ok'] else '⚠️'} **{x['app']}**: {x['detail']}" for x in app_syncs))
     for b in batches:
         users = [u for u in plan["users"] if u["batch"] == b]
         if a.limit:
@@ -222,7 +229,7 @@ def cmd_logins(a, cfg):
         ok = sum(1 for x in results if x["ok"])
         launches = Counter(l["app"] for x in results for l in x["launches"])
         record = {"date": day.isoformat(), "batch": b, "ran_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-                  "users": len(results), "succeeded": ok, "launches": dict(launches),
+                  "users": len(results), "succeeded": ok, "launches": dict(launches), "app_syncs": app_syncs,
                   "failures": [{k: x.get(k) for k in ("id", "role", "error", "url")} for x in results if not x["ok"]]}
         d = run_dir(STATE_DIR, day)
         d.mkdir(parents=True, exist_ok=True)

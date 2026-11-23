@@ -64,6 +64,8 @@ Add these under **Settings > Secrets and variables > Actions** (see `.env.exampl
 | `CLEVER_SFTP_USERNAME`, `CLEVER_SFTP_PASSWORD` | uploads |
 | `CLEVER_SFTP_HOST_KEY` (optional) | pins the SFTP server key: one full line from `ssh-keyscan sftp2.clever.com 2>/dev/null` |
 | `CLEVER_LOGIN_URL` | logins, probe |
+| `LANTERN_SYNC_URL` | Lantern's sync endpoint, called before each login run (`https://lantern.edtecharchitect.com/api/sync/clever`) |
+| `LANTERN_SYNC_SECRET` | the `LANTERN_SYNC_SECRET` set on the Lantern server |
 
 ### 3. First run, in order (Actions tab → workflow → Run workflow)
 Scheduled logins start **paused** (`logins.enabled: false` in `config/sandbox.yaml`), because app
