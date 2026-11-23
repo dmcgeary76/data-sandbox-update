@@ -117,6 +117,15 @@ logins:
     - 'button[type="submit"]'
     - 'button:has-text("Log in")'
     - 'button:has-text("Sign in")'
+  # Before a login run, ask each app to pull the latest roster from Clever, so
+  # students added by today's drift can sign in to the app. URL and secret come
+  # from GitHub secrets. A failed sync is reported but never blocks logins.
+  pre_batch_sync:
+    - name: lantern
+      url_env: LANTERN_SYNC_URL        # https://lantern.edtecharchitect.com/api/sync/clever
+      secret_env: LANTERN_SYNC_SECRET
+      expect_mode: live                # Lantern says "mock" when it has no district token
+      timeout_s: 300
   # Optional clicks before the username field appears (e.g. an identity provider button).
   pre_login_clicks: ["Password"]
   # Regex for the Clever Portal URL: clever.com/in/<district>/student/portal for students,

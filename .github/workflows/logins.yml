@@ -33,6 +33,8 @@ jobs:
     timeout-minutes: 60
     env:
       CLEVER_LOGIN_URL: ${{ secrets.CLEVER_LOGIN_URL }}
+      LANTERN_SYNC_URL: ${{ secrets.LANTERN_SYNC_URL }}
+      LANTERN_SYNC_SECRET: ${{ secrets.LANTERN_SYNC_SECRET }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
