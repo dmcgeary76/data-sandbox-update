@@ -146,4 +146,7 @@ apps:
     # Redirect URI: https://lantern.edtecharchitect.com/api/auth/callback
     expect_url: "/api/auth/callback\\?code="
     fail_url: "/login/error"
-    steps: []
+    # Lantern signs users in on a welcome page (/account); go on into the app.
+    steps:
+      - {action: click_text, text: "Continue to Lantern", exact: true}
+      - {action: wait_ms, ms: 3000}
