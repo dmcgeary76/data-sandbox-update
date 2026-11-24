@@ -1,0 +1,35 @@
+{
+ "date": "2026-11-24",
+ "batch": 2,
+ "ran_at": "2026-11-24T20:07:13+00:00",
+ "users": 32,
+ "succeeded": 32,
+ "launches": {
+  "lantern": 32
+ },
+ "app_syncs": [
+  {
+   "app": "lantern",
+   "ok": true,
+   "mode": "live",
+   "counts": {
+    "districts": 1,
+    "schools": 3,
+    "academicSessions": 1,
+    "courses": 31,
+    "sections": 31,
+    "users": 214,
+    "enrollments": 705
+   },
+   "warnings": [
+    "Skipping user 6afdd0b8a5270dd4988b525d: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized).",
+    "Skipping user 6afdd0b8a5270dd4988b525e: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized).",
+    "Skipping user 6afdd0b8a5270dd4988b525f: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized).",
+    "Skipping user 6afdd0b8a5270dd4988b5260: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized).",
+    "Skipping user 6afdd0b8a5270dd4988b5261: no student/teacher/staff role Lantern's schema supports (district_admin or unrecognized)."
+   ],
+   "detail": "districts 1, schools 3, academicSessions 1, courses 31, sections 31, users 214, enrollments 705"
+  }
+ ],
+ "failures": []
+}
