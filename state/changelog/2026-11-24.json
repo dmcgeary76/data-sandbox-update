@@ -1,0 +1,59 @@
+{
+ "date": "2026-11-24",
+ "title": "Daily drift",
+ "totals": "201 students, 13 teachers, 31 sections, 248 contacts in 122 families",
+ "expected_events": {
+  "sections.created": 1,
+  "sections.updated": 7,
+  "users.created": 4,
+  "users.deleted": 1,
+  "users.updated": 2
+ },
+ "changes": [
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Emily Gutierrez (442754, grade 3, ES01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Daniel Cruz (366654, grade 7); guardians: Elizabeth Cruz, Daniel Cruz",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "teacher_hired",
+   "summary": "Hired Yesenia Medina (87324) as Math Intervention Teacher at ES01 with a new Math Intervention group of 8 grade Kindergarten students",
+   "expected_events": [
+    "users.created",
+    "sections.created"
+   ]
+  },
+  {
+   "kind": "guardian_contact_changed",
+   "summary": "Allison Duncan updated their phone",
+   "expected_events": [
+    "users.updated"
+   ]
+  },
+  {
+   "kind": "teacher_email_changed",
+   "summary": "Yesenia Medina's email changed to ymedina@cedarvalleyusd.example",
+   "expected_events": [
+    "users.updated"
+   ]
+  }
+ ]
+}

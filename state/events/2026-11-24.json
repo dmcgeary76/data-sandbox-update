@@ -1,0 +1,19 @@
+{
+ "baseline": false,
+ "last_event_id": "6b04b0510e4c043f60105a26",
+ "counts": {
+  "districts.updated": 1,
+  "sections.updated": 9,
+  "users.created": 8,
+  "users.deleted": 6,
+  "users.updated": 3
+ },
+ "total": 27,
+ "samples": {
+  "districts.updated": "#DEMO Cedar Valley Unified",
+  "users.created": "Melanie Chavez",
+  "users.updated": "Brenda Ochoa",
+  "sections.updated": "Homeroom - Nguyen - HR",
+  "users.deleted": "Maverick Flores"
+ }
+}

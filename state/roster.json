@@ -1,6 +1,7 @@
 {
  "counters": {
-  "household": 123
+  "household": 124,
+  "intervention:ES01": 1
  },
  "households": {
   "H00001": {
@@ -2878,7 +2879,7 @@
      "first": "Allison",
      "id": "C109609",
      "last": "Duncan",
-     "phone": "7075550111",
+     "phone": "5305550119",
      "phone_type": "Home",
      "relationship": "Parent",
      "type": "Parent/Guardian"
@@ -3914,10 +3915,42 @@
    "street": "3386 Elm St",
    "surname": "Sandoval",
    "zip": "95403"
+  },
+  "H00124": {
+   "city": "Cedar Valley",
+   "group": "hispanic",
+   "guardians": [
+    {
+     "email": "elizabethcruz32@example.com",
+     "first": "Elizabeth",
+     "id": "C614760",
+     "last": "Cruz",
+     "phone": "5305550171",
+     "phone_type": "Work",
+     "relationship": "Parent",
+     "type": "Parent/Guardian"
+    },
+    {
+     "email": "daniel.cruz@example.net",
+     "first": "Daniel",
+     "id": "C833563",
+     "last": "Cruz",
+     "phone": "7075550112",
+     "phone_type": "Cell",
+     "relationship": "Parent",
+     "type": "Parent/Guardian"
+    }
+   ],
+   "home_language": "English",
+   "id": "H00124",
+   "state": "CA",
+   "street": "9569 Las Palmas St",
+   "surname": "Cruz",
+   "zip": "95403"
   }
  },
- "last_drift_date": "2026-11-23",
- "last_upload_at": "2026-11-23T21:12:09+00:00",
+ "last_drift_date": "2026-11-24",
+ "last_upload_at": "2026-11-24T13:02:28+00:00",
  "schema_version": 1,
  "sections": {
   "ES01-HR-1": {
@@ -4007,7 +4040,6 @@
     "558182",
     "553639",
     "568152",
-    "442754",
     "473307",
     "443574",
     "335535",
@@ -4211,7 +4243,6 @@
     "558182",
     "553639",
     "568152",
-    "442754",
     "473307",
     "443574",
     "335535",
@@ -4328,6 +4359,29 @@
    "subject": "Math",
    "teacher_id": "87054"
   },
+  "ES01-MINT1": {
+   "course_code": "MINT",
+   "course_name": "Math Intervention",
+   "course_number": "ES01-MINT1",
+   "created_on": "2026-11-24",
+   "grade": "Kindergarten",
+   "id": "ES01-MINT1",
+   "period": "1",
+   "role_key": "ES01:intervention:1",
+   "school_id": "ES01",
+   "student_ids": [
+    "353467",
+    "385868",
+    "518030",
+    "555357",
+    "613700",
+    "623455",
+    "633520",
+    "678338"
+   ],
+   "subject": "Interventions/online learning",
+   "teacher_id": "87324"
+  },
   "MS01-ART-6": {
    "course_code": "ART",
    "course_name": "Art",
@@ -4383,7 +4437,8 @@
     "370743",
     "321281",
     "454249",
-    "511037"
+    "511037",
+    "366654"
    ],
    "subject": "Arts and music",
    "teacher_id": "81376"
@@ -4502,7 +4557,8 @@
     "454249",
     "505386",
     "511037",
-    "531840"
+    "531840",
+    "366654"
    ],
    "subject": "English/language arts",
    "teacher_id": "88347"
@@ -4634,7 +4690,8 @@
     "454249",
     "505386",
     "511037",
-    "531840"
+    "531840",
+    "366654"
    ],
    "subject": "Math",
    "teacher_id": "79499"
@@ -4853,7 +4910,8 @@
     "454249",
     "505386",
     "511037",
-    "531840"
+    "531840",
+    "366654"
    ],
    "subject": "Science",
    "teacher_id": "82223"
@@ -4985,7 +5043,8 @@
     "454249",
     "505386",
     "511037",
-    "531840"
+    "531840",
+    "366654"
    ],
    "subject": "Social studies",
    "teacher_id": "88431"
@@ -5783,6 +5842,28 @@
    "s504": "Y",
    "school_id": "ES01",
    "state_id": "1115954070"
+  },
+  "366654": {
+   "created_on": "2026-11-24",
+   "dob": "2014-05-12",
+   "ell": "N",
+   "email": "dcruz654@students.cedarvalleyusd.example",
+   "first": "Daniel",
+   "frl": "F",
+   "gender": "M",
+   "gifted": "N",
+   "grade": "7",
+   "hispanic": "Y",
+   "household_id": "H00124",
+   "id": "366654",
+   "iep": "N",
+   "last": "Cruz",
+   "middle": "",
+   "preferred_first": "",
+   "race": "M",
+   "s504": "N",
+   "school_id": "MS01",
+   "state_id": "5580251081"
   },
   "368862": {
    "created_on": "2026-11-18",
@@ -6619,28 +6700,6 @@
    "s504": "N",
    "school_id": "ES01",
    "state_id": "8896816733"
-  },
-  "442754": {
-   "created_on": "2026-11-18",
-   "dob": "2018-02-08",
-   "ell": "Y",
-   "email": "egutierrez754@students.cedarvalleyusd.example",
-   "first": "Emily",
-   "frl": "N",
-   "gender": "F",
-   "gifted": "N",
-   "grade": "3",
-   "hispanic": "Y",
-   "household_id": "H00061",
-   "id": "442754",
-   "iep": "N",
-   "last": "Gutierrez",
-   "middle": "R",
-   "preferred_first": "",
-   "race": "W",
-   "s504": "N",
-   "school_id": "ES01",
-   "state_id": "2333053257"
   },
   "443574": {
    "created_on": "2026-11-18",
@@ -9580,6 +9639,18 @@
    "state_id": "65123418",
    "title": "Kindergarten Teacher"
   },
+  "87324": {
+   "created_on": "2026-11-24",
+   "email": "ymedina@cedarvalleyusd.example",
+   "first": "Yesenia",
+   "id": "87324",
+   "last": "Medina",
+   "middle": "B",
+   "role_key": "ES01:intervention:1",
+   "school_id": "ES01",
+   "state_id": "69934394",
+   "title": "Math Intervention Teacher"
+  },
   "88347": {
    "created_on": "2026-11-18",
    "email": "melanie.allen@cedarvalleyusd.example",
@@ -9641,6 +9712,7 @@
   "361607",
   "362122",
   "365842",
+  "366654",
   "368862",
   "369140",
   "370743",
@@ -9822,6 +9894,7 @@
   "81376",
   "82223",
   "87054",
+  "87324",
   "88347",
   "88431",
   "C100509",
@@ -9964,6 +10037,7 @@
   "C586739",
   "C595245",
   "C612970",
+  "C614760",
   "C616523",
   "C617720",
   "C619111",
@@ -10025,6 +10099,7 @@
   "C825329",
   "C826844",
   "C830271",
+  "C833563",
   "C833609",
   "C836101",
   "C837221",
