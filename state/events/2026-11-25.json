@@ -1,0 +1,23 @@
+{
+ "baseline": false,
+ "last_event_id": "6b058df1321e3e4ca6279473",
+ "counts": {
+  "courses.created": 1,
+  "districts.updated": 1,
+  "sections.created": 1,
+  "sections.updated": 7,
+  "users.created": 4,
+  "users.deleted": 1,
+  "users.updated": 4
+ },
+ "total": 19,
+ "samples": {
+  "districts.updated": "#DEMO Cedar Valley Unified",
+  "users.created": "Daniel Cruz",
+  "users.updated": "Allison Duncan",
+  "courses.created": "Math Intervention",
+  "sections.created": "Math Intervention - Medina - 1",
+  "sections.updated": "Homeroom - Page - HR",
+  "users.deleted": "Emily Gutierrez"
+ }
+}

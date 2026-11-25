@@ -1,0 +1,70 @@
+{
+ "date": "2026-11-25",
+ "title": "Daily drift",
+ "totals": "202 students, 13 teachers, 31 sections, 250 contacts in 123 families",
+ "expected_events": {
+  "sections.updated": 9,
+  "users.created": 7,
+  "users.deleted": 4,
+  "users.updated": 1
+ },
+ "changes": [
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Isabella Mendoza (531840, grade 7, MS01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "users.deleted",
+    "users.deleted",
+    "users.deleted"
+   ]
+  },
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Nolan Johnson (363923, grade 3); guardians: Lisa Medina",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Jun Le (318375, grade 3); guardians: Soo-jin Le, Hao Le",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "guardian_added",
+   "summary": "Added aunt/uncle Karina Estrada as an emergency contact for the Cruz family",
+   "expected_events": [
+    "users.created"
+   ]
+  },
+  {
+   "kind": "program_status",
+   "summary": "Elijah Lee: lunch status changed",
+   "expected_events": [
+    "users.updated"
+   ]
+  },
+  {
+   "kind": "guardian_added",
+   "summary": "Added aunt/uncle Melinda Boyd as an emergency contact for the Taylor family",
+   "expected_events": [
+    "users.created"
+   ]
+  }
+ ]
+}
