@@ -1,0 +1,1317 @@
+{
+ "date": "2026-11-26",
+ "eligible_students": 200,
+ "eligible_teachers": 12,
+ "users": [
+  {
+   "id": "445560",
+   "role": "student",
+   "name": "Oliver Lane",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "638902",
+   "role": "student",
+   "name": "Olivia Mendoza",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "510437",
+   "role": "student",
+   "name": "Jackson Mendoza",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "454603",
+   "role": "student",
+   "name": "Daniel Perry",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "694857",
+   "role": "student",
+   "name": "Lucia Rios",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "443574",
+   "role": "student",
+   "name": "Fernanda Estrada",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "526366",
+   "role": "student",
+   "name": "Olivia Lyons",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "323689",
+   "role": "student",
+   "name": "Samantha Lewis",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "620902",
+   "role": "student",
+   "name": "Ryan Hernandez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "361607",
+   "role": "student",
+   "name": "Matias Cabrera",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "682218",
+   "role": "student",
+   "name": "James Johnson",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "556245",
+   "role": "student",
+   "name": "Carlos Hernandez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "429632",
+   "role": "student",
+   "name": "Angel Nichols",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "667815",
+   "role": "student",
+   "name": "Emma Schmidt",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "619737",
+   "role": "student",
+   "name": "Sofia Torres",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "470920",
+   "role": "student",
+   "name": "Gabriella Morales",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "639194",
+   "role": "student",
+   "name": "William Schmidt",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "586391",
+   "role": "student",
+   "name": "Scarlett Lane",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "571963",
+   "role": "student",
+   "name": "Leonardo Ochoa",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "666347",
+   "role": "student",
+   "name": "Oliver Wood",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "489700",
+   "role": "student",
+   "name": "James Reddy",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "697538",
+   "role": "student",
+   "name": "Piper Perry",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "560906",
+   "role": "student",
+   "name": "Alexa Duncan",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "357642",
+   "role": "student",
+   "name": "Sofia Morales",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "409181",
+   "role": "student",
+   "name": "Emma Olson",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "366654",
+   "role": "student",
+   "name": "Daniel Cruz",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "624777",
+   "role": "student",
+   "name": "Charles Guzman",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "598447",
+   "role": "student",
+   "name": "Melanie Davidson",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "405650",
+   "role": "student",
+   "name": "William Reynolds",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "373111",
+   "role": "student",
+   "name": "Gael Gutierrez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "363923",
+   "role": "student",
+   "name": "Nolan Johnson",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "518514",
+   "role": "student",
+   "name": "Ava Olson",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "397460",
+   "role": "student",
+   "name": "Mateo Morales",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "324582",
+   "role": "student",
+   "name": "Dulce Hernandez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "347337",
+   "role": "student",
+   "name": "Olivia Pham",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "483508",
+   "role": "student",
+   "name": "Emily Snyder",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "483160",
+   "role": "student",
+   "name": "William Campbell",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "321281",
+   "role": "student",
+   "name": "Elizabeth Sanchez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "335535",
+   "role": "student",
+   "name": "Evan Velasquez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "471522",
+   "role": "student",
+   "name": "Elizabeth Schmidt",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "330911",
+   "role": "student",
+   "name": "Sadie Kim",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "382989",
+   "role": "student",
+   "name": "Logan Krueger",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "390045",
+   "role": "student",
+   "name": "Sadie Olson",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "322406",
+   "role": "student",
+   "name": "Gabriela Chavez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "426976",
+   "role": "student",
+   "name": "Nathan Daniel",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "403491",
+   "role": "student",
+   "name": "Camila West",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "327331",
+   "role": "student",
+   "name": "Matias Rodriguez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "679817",
+   "role": "student",
+   "name": "Emiliano Chavez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "362122",
+   "role": "student",
+   "name": "Victoria Jimenez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "627903",
+   "role": "student",
+   "name": "Liam Perez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "663137",
+   "role": "student",
+   "name": "Liam Gonzalez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "523497",
+   "role": "student",
+   "name": "Diego Jimenez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "669401",
+   "role": "student",
+   "name": "Aiden Hernandez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "577899",
+   "role": "student",
+   "name": "Arianna Valencia",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "352681",
+   "role": "student",
+   "name": "Angel Wilson",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "385868",
+   "role": "student",
+   "name": "Ian Sharma",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "444596",
+   "role": "student",
+   "name": "Mia Perez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "315991",
+   "role": "student",
+   "name": "Everett Nguyen",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "300899",
+   "role": "student",
+   "name": "Landon Hernandez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "549458",
+   "role": "student",
+   "name": "Charlotte Mcdonald",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "500153",
+   "role": "student",
+   "name": "Chloe Howard",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "303337",
+   "role": "student",
+   "name": "Carson Lee",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "76987",
+   "role": "teacher",
+   "name": "Paula Carter",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "501674",
+   "role": "student",
+   "name": "Liam Simmons",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "435935",
+   "role": "student",
+   "name": "Nova Daniel",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "517806",
+   "role": "student",
+   "name": "Jaxon Payne",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "553639",
+   "role": "student",
+   "name": "Sakura Choi",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "79499",
+   "role": "teacher",
+   "name": "Rebecca Paul",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "511272",
+   "role": "student",
+   "name": "Savannah Lyons",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "454249",
+   "role": "student",
+   "name": "Ethan Gonzalez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "665221",
+   "role": "student",
+   "name": "Lucas Watson",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "413896",
+   "role": "student",
+   "name": "Samantha Hicks",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "513163",
+   "role": "student",
+   "name": "Violet Powell",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "81376",
+   "role": "teacher",
+   "name": "Danielle Snyder",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "653776",
+   "role": "student",
+   "name": "Ying Ng",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "692158",
+   "role": "student",
+   "name": "Liam Curtis",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "468648",
+   "role": "student",
+   "name": "Tuan Ng",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "318632",
+   "role": "student",
+   "name": "Jackson Cortez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "311321",
+   "role": "student",
+   "name": "Samuel Robinson",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "325570",
+   "role": "student",
+   "name": "Adam Payne",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "523427",
+   "role": "student",
+   "name": "Liam Choi",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "547590",
+   "role": "student",
+   "name": "Gabriel Pierce",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "316504",
+   "role": "student",
+   "name": "Ava Martinez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "472871",
+   "role": "student",
+   "name": "Diego Rodriguez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "518030",
+   "role": "student",
+   "name": "Lucas Garcia",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "558182",
+   "role": "student",
+   "name": "Angel Perkins",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "436648",
+   "role": "student",
+   "name": "Joshua Gonzalez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "463372",
+   "role": "student",
+   "name": "Olivia Holden",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "305038",
+   "role": "student",
+   "name": "Mia Taylor",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "625476",
+   "role": "student",
+   "name": "Jack Whitaker",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "513493",
+   "role": "student",
+   "name": "Sadie Mcdonald",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "529536",
+   "role": "student",
+   "name": "Henry Yang",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "430297",
+   "role": "student",
+   "name": "James Washington",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "383296",
+   "role": "student",
+   "name": "Noah Pham",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "573890",
+   "role": "student",
+   "name": "Charlotte Mora",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "655791",
+   "role": "student",
+   "name": "Wyatt Mendoza",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "692925",
+   "role": "student",
+   "name": "Elizabeth Santos",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "501057",
+   "role": "student",
+   "name": "Alexa Garcia",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "568152",
+   "role": "student",
+   "name": "Daniela Garcia",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "492668",
+   "role": "student",
+   "name": "Emma Garcia",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "657940",
+   "role": "student",
+   "name": "Mason Mendoza",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "337099",
+   "role": "student",
+   "name": "Oliver Campbell",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "687825",
+   "role": "student",
+   "name": "Allison Salazar",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "352586",
+   "role": "student",
+   "name": "Lucas Chan",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "77212",
+   "role": "teacher",
+   "name": "Pamela King",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "614012",
+   "role": "student",
+   "name": "Mia Gutierrez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "652818",
+   "role": "student",
+   "name": "Adam Lee",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "678338",
+   "role": "student",
+   "name": "Jack Rose",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "88431",
+   "role": "teacher",
+   "name": "Jessica Rodgers",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "547345",
+   "role": "student",
+   "name": "Grace Pierce",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "360388",
+   "role": "student",
+   "name": "Gael Lopez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "370760",
+   "role": "student",
+   "name": "Duc Reddy",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "652889",
+   "role": "student",
+   "name": "Isabella Mcdonald",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "505386",
+   "role": "student",
+   "name": "Chloe Daniel",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "416349",
+   "role": "student",
+   "name": "Xinyi Kim",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "379728",
+   "role": "student",
+   "name": "Aiden Sharma",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "511037",
+   "role": "student",
+   "name": "Ximena Rodriguez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "559939",
+   "role": "student",
+   "name": "Renata Sandoval",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "80473",
+   "role": "teacher",
+   "name": "Jennifer Nguyen",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "567752",
+   "role": "student",
+   "name": "Wei Choi",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "380478",
+   "role": "student",
+   "name": "Sofia Schmidt",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "624860",
+   "role": "student",
+   "name": "Yuna Sharma",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "337949",
+   "role": "student",
+   "name": "Emma Mendoza",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "389937",
+   "role": "student",
+   "name": "Renata Gutierrez",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "80634",
+   "role": "teacher",
+   "name": "Stacy Short",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "303440",
+   "role": "student",
+   "name": "Gabriel Brown",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "396604",
+   "role": "student",
+   "name": "Mateo Washington",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "675384",
+   "role": "student",
+   "name": "Olivia Hernandez",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 0
+  },
+  {
+   "id": "668176",
+   "role": "student",
+   "name": "Aarav Choi",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "325646",
+   "role": "student",
+   "name": "Camila Mendoza",
+   "school": "ES01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "388700",
+   "role": "student",
+   "name": "Emma Rivera",
+   "school": "MS01",
+   "apps": [
+    "lantern"
+   ],
+   "batch": 1
+  }
+ ]
+}
