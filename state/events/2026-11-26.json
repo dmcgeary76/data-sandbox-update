@@ -1,0 +1,17 @@
+{
+ "baseline": false,
+ "last_event_id": "6b06e0688010cb2afe4e6457",
+ "counts": {
+  "districts.updated": 1,
+  "sections.updated": 7,
+  "users.created": 7,
+  "users.deleted": 4
+ },
+ "total": 19,
+ "samples": {
+  "districts.updated": "#DEMO Cedar Valley Unified",
+  "users.created": "Nolan Johnson",
+  "sections.updated": "Homeroom - Page - HR",
+  "users.deleted": "Isabella Mendoza"
+ }
+}

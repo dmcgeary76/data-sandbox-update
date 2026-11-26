@@ -1,6 +1,6 @@
 {
  "counters": {
-  "household": 126,
+  "household": 127,
   "intervention:ES01": 1
  },
  "households": {
@@ -360,9 +360,9 @@
    "home_language": "English",
    "id": "H00010",
    "state": "CA",
-   "street": "2981 Juniper St",
+   "street": "2498 Valley View Ave Apt 17",
    "surname": "Patel",
-   "zip": "95404"
+   "zip": "95401"
   },
   "H00011": {
    "city": "Cedar Valley",
@@ -824,48 +824,6 @@
    "surname": "Cortez",
    "zip": "95403"
   },
-  "H00026": {
-   "city": "Cedar Valley",
-   "group": "hispanic",
-   "guardians": [
-    {
-     "email": "mariagarcia6@example.org",
-     "first": "Maria",
-     "id": "C670349",
-     "last": "Garcia",
-     "phone": "7075550133",
-     "phone_type": "Cell",
-     "relationship": "Parent",
-     "type": "Parent/Guardian"
-    },
-    {
-     "email": "patriciaramirez40@example.net",
-     "first": "Patricia",
-     "id": "C691991",
-     "last": "Ramirez",
-     "phone": "7075550195",
-     "phone_type": "Cell",
-     "relationship": "Parent",
-     "type": "Parent/Guardian"
-    },
-    {
-     "email": "",
-     "first": "Mary",
-     "id": "C100509",
-     "last": "Aguilar",
-     "phone": "7075550164",
-     "phone_type": "Cell",
-     "relationship": "Grandparent",
-     "type": "Emergency"
-    }
-   ],
-   "home_language": "Spanish",
-   "id": "H00026",
-   "state": "CA",
-   "street": "809 Laurel Way",
-   "surname": "Ramirez",
-   "zip": "95404"
-  },
   "H00027": {
    "city": "Cedar Valley",
    "group": "white",
@@ -1278,9 +1236,9 @@
    "home_language": "English",
    "id": "H00039",
    "state": "CA",
-   "street": "2908 Fairview St",
+   "street": "4419 Redwood Dr",
    "surname": "Hicks",
-   "zip": "95403"
+   "zip": "95401"
   },
   "H00040": {
    "city": "Cedar Valley",
@@ -2398,7 +2356,7 @@
    "home_language": "English",
    "id": "H00075",
    "state": "CA",
-   "street": "551 Brookwood Way",
+   "street": "3424 Orchard Way Apt 6",
    "surname": "Schmidt",
    "zip": "95404"
   },
@@ -3948,41 +3906,41 @@
    "surname": "Johnson",
    "zip": "95403"
   },
-  "H00126": {
+  "H00127": {
    "city": "Cedar Valley",
-   "group": "asian",
+   "group": "white",
    "guardians": [
     {
-     "email": "soojinle6@example.org",
-     "first": "Soo-jin",
-     "id": "C195320",
-     "last": "Le",
-     "phone": "9165550121",
+     "email": "andreabryant10@example.org",
+     "first": "Andrea",
+     "id": "C890085",
+     "last": "Bryant",
+     "phone": "5305550132",
      "phone_type": "Cell",
      "relationship": "Parent",
      "type": "Parent/Guardian"
     },
     {
-     "email": "haole29@example.org",
-     "first": "Hao",
-     "id": "C135625",
-     "last": "Le",
-     "phone": "7075550105",
+     "email": "carlos.bryant@example.org",
+     "first": "Carlos",
+     "id": "C512152",
+     "last": "Bryant",
+     "phone": "9165550148",
      "phone_type": "Cell",
      "relationship": "Parent",
      "type": "Parent/Guardian"
     }
    ],
    "home_language": "English",
-   "id": "H00126",
+   "id": "H00127",
    "state": "CA",
-   "street": "6059 Orchard Ave",
-   "surname": "Le",
-   "zip": "95403"
+   "street": "3776 Hillcrest Ave",
+   "surname": "Bryant",
+   "zip": "95407"
   }
  },
- "last_drift_date": "2026-11-25",
- "last_upload_at": "2026-11-25T13:02:18+00:00",
+ "last_drift_date": "2026-11-26",
+ "last_upload_at": "2026-11-26T13:02:25+00:00",
  "schema_version": 1,
  "sections": {
   "ES01-HR-1": {
@@ -4082,8 +4040,7 @@
     "361607",
     "677298",
     "477794",
-    "363923",
-    "318375"
+    "363923"
    ],
    "subject": "Homeroom/advisory",
    "teacher_id": "73420"
@@ -4168,7 +4125,6 @@
    "school_id": "ES01",
    "student_ids": [
     "337949",
-    "353467",
     "405650",
     "424754",
     "555357",
@@ -4287,8 +4243,7 @@
     "361607",
     "677298",
     "477794",
-    "363923",
-    "318375"
+    "363923"
    ],
    "subject": "Math",
    "teacher_id": "73420"
@@ -4373,7 +4328,6 @@
    "school_id": "ES01",
    "student_ids": [
     "337949",
-    "353467",
     "405650",
     "424754",
     "555357",
@@ -4394,29 +4348,6 @@
    ],
    "subject": "Math",
    "teacher_id": "87054"
-  },
-  "ES01-MINT1": {
-   "course_code": "MINT",
-   "course_name": "Math Intervention",
-   "course_number": "ES01-MINT1",
-   "created_on": "2026-11-24",
-   "grade": "Kindergarten",
-   "id": "ES01-MINT1",
-   "period": "1",
-   "role_key": "ES01:intervention:1",
-   "school_id": "ES01",
-   "student_ids": [
-    "353467",
-    "385868",
-    "518030",
-    "555357",
-    "613700",
-    "623455",
-    "633520",
-    "678338"
-   ],
-   "subject": "Interventions/online learning",
-   "teacher_id": "87324"
   },
   "MS01-ART-6": {
    "course_code": "ART",
@@ -4549,7 +4480,8 @@
     "653776",
     "463372",
     "305038",
-    "635641"
+    "635641",
+    "337376"
    ],
    "subject": "English/language arts",
    "teacher_id": "88347"
@@ -4593,7 +4525,8 @@
     "454249",
     "505386",
     "511037",
-    "366654"
+    "366654",
+    "370083"
    ],
    "subject": "English/language arts",
    "teacher_id": "88347"
@@ -4681,7 +4614,8 @@
     "653776",
     "463372",
     "305038",
-    "635641"
+    "635641",
+    "337376"
    ],
    "subject": "Math",
    "teacher_id": "79499"
@@ -4725,7 +4659,8 @@
     "454249",
     "505386",
     "511037",
-    "366654"
+    "366654",
+    "370083"
    ],
    "subject": "Math",
    "teacher_id": "79499"
@@ -4797,7 +4732,8 @@
     "323689",
     "426976",
     "653776",
-    "635641"
+    "635641",
+    "337376"
    ],
    "subject": "PE and health",
    "teacher_id": "77212"
@@ -4826,7 +4762,8 @@
     "667815",
     "535350",
     "679817",
-    "505386"
+    "505386",
+    "370083"
    ],
    "subject": "PE and health",
    "teacher_id": "77212"
@@ -4899,7 +4836,8 @@
     "653776",
     "463372",
     "305038",
-    "635641"
+    "635641",
+    "337376"
    ],
    "subject": "Science",
    "teacher_id": "82223"
@@ -4943,7 +4881,8 @@
     "454249",
     "505386",
     "511037",
-    "366654"
+    "366654",
+    "370083"
    ],
    "subject": "Science",
    "teacher_id": "82223"
@@ -5031,7 +4970,8 @@
     "653776",
     "463372",
     "305038",
-    "635641"
+    "635641",
+    "337376"
    ],
    "subject": "Social studies",
    "teacher_id": "88431"
@@ -5075,7 +5015,8 @@
     "454249",
     "505386",
     "511037",
-    "366654"
+    "366654",
+    "370083"
    ],
    "subject": "Social studies",
    "teacher_id": "88431"
@@ -5302,28 +5243,6 @@
    "school_id": "ES01",
    "state_id": "7588485195"
   },
-  "318375": {
-   "created_on": "2026-11-25",
-   "dob": "2018-04-07",
-   "ell": "N",
-   "email": "jle375@students.cedarvalleyusd.example",
-   "first": "Jun",
-   "frl": "N",
-   "gender": "M",
-   "gifted": "N",
-   "grade": "3",
-   "hispanic": "N",
-   "household_id": "H00126",
-   "id": "318375",
-   "iep": "N",
-   "last": "Le",
-   "middle": "",
-   "preferred_first": "",
-   "race": "A",
-   "s504": "N",
-   "school_id": "ES01",
-   "state_id": "9066471360"
-  },
   "318632": {
    "created_on": "2026-11-18",
    "dob": "2016-01-26",
@@ -5428,7 +5347,7 @@
    "iep": "N",
    "last": "Lewis",
    "middle": "",
-   "preferred_first": "Sam",
+   "preferred_first": "",
    "race": "W",
    "s504": "N",
    "school_id": "MS01",
@@ -5610,6 +5529,28 @@
    "school_id": "MS01",
    "state_id": "2214595463"
   },
+  "337376": {
+   "created_on": "2026-11-26",
+   "dob": "2014-09-09",
+   "ell": "N",
+   "email": "ebryant376@students.cedarvalleyusd.example",
+   "first": "Ethan",
+   "frl": "F",
+   "gender": "M",
+   "gifted": "N",
+   "grade": "6",
+   "hispanic": "N",
+   "household_id": "H00127",
+   "id": "337376",
+   "iep": "N",
+   "last": "Bryant",
+   "middle": "",
+   "preferred_first": "",
+   "race": "W",
+   "s504": "N",
+   "school_id": "MS01",
+   "state_id": "2047869604"
+  },
   "337949": {
    "created_on": "2026-11-18",
    "dob": "2021-08-04",
@@ -5719,28 +5660,6 @@
    "s504": "N",
    "school_id": "MS01",
    "state_id": "1436455575"
-  },
-  "353467": {
-   "created_on": "2026-11-18",
-   "dob": "2021-07-18",
-   "ell": "N",
-   "email": "rramirez467@students.cedarvalleyusd.example",
-   "first": "Ricardo",
-   "frl": "N",
-   "gender": "M",
-   "gifted": "N",
-   "grade": "Kindergarten",
-   "hispanic": "Y",
-   "household_id": "H00026",
-   "id": "353467",
-   "iep": "N",
-   "last": "Ramirez",
-   "middle": "",
-   "preferred_first": "",
-   "race": "W",
-   "s504": "N",
-   "school_id": "ES01",
-   "state_id": "5260432172"
   },
   "355957": {
    "created_on": "2026-11-18",
@@ -5983,6 +5902,28 @@
    "s504": "N",
    "school_id": "ES01",
    "state_id": "2551685404"
+  },
+  "370083": {
+   "created_on": "2026-11-26",
+   "dob": "2014-02-28",
+   "ell": "N",
+   "email": "jbryant083@students.cedarvalleyusd.example",
+   "first": "Jace",
+   "frl": "N",
+   "gender": "M",
+   "gifted": "N",
+   "grade": "7",
+   "hispanic": "N",
+   "household_id": "H00127",
+   "id": "370083",
+   "iep": "N",
+   "last": "Bryant",
+   "middle": "B",
+   "preferred_first": "",
+   "race": "W",
+   "s504": "N",
+   "school_id": "MS01",
+   "state_id": "2579707815"
   },
   "370743": {
    "created_on": "2026-11-18",
@@ -9692,18 +9633,6 @@
    "state_id": "65123418",
    "title": "Kindergarten Teacher"
   },
-  "87324": {
-   "created_on": "2026-11-24",
-   "email": "ymedina@cedarvalleyusd.example",
-   "first": "Yesenia",
-   "id": "87324",
-   "last": "Medina",
-   "middle": "B",
-   "role_key": "ES01:intervention:1",
-   "school_id": "ES01",
-   "state_id": "69934394",
-   "title": "Math Intervention Teacher"
-  },
   "88347": {
    "created_on": "2026-11-18",
    "email": "melanie.allen@cedarvalleyusd.example",
@@ -9753,6 +9682,7 @@
   "332254",
   "335535",
   "337099",
+  "337376",
   "337949",
   "338115",
   "347337",
@@ -9770,6 +9700,7 @@
   "366654",
   "368862",
   "369140",
+  "370083",
   "370743",
   "370760",
   "371073",
@@ -10068,6 +9999,7 @@
   "C506779",
   "C507644",
   "C511581",
+  "C512152",
   "C513360",
   "C514800",
   "C519399",
@@ -10180,6 +10112,7 @@
   "C872754",
   "C879176",
   "C886791",
+  "C890085",
   "C896964",
   "C904717",
   "C905375",

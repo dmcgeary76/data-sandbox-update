@@ -1,0 +1,98 @@
+{
+ "date": "2026-11-26",
+ "title": "Daily drift",
+ "totals": "202 students, 12 teachers, 30 sections, 247 contacts in 122 families",
+ "expected_events": {
+  "sections.deleted": 1,
+  "sections.updated": 15,
+  "users.created": 4,
+  "users.deleted": 8,
+  "users.updated": 8
+ },
+ "changes": [
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Ricardo Ramirez (353467, grade Kindergarten, ES01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "users.deleted",
+    "users.deleted",
+    "users.deleted"
+   ]
+  },
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Jun Le (318375, grade 3, ES01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated",
+    "users.deleted",
+    "users.deleted"
+   ]
+  },
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Jace Bryant (370083, grade 7), Ethan Bryant (337376, grade 6); guardians: Andrea Bryant, Carlos Bryant",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "teacher_departed",
+   "summary": "Yesenia Medina (Math Intervention Teacher, ES01) left; their intervention section was closed",
+   "expected_events": [
+    "users.deleted",
+    "sections.deleted"
+   ]
+  },
+  {
+   "kind": "household_moved",
+   "summary": "Schmidt family moved from 551 Brookwood Way to 3424 Orchard Way Apt 6, 95404",
+   "expected_events": [
+    "users.updated",
+    "users.updated",
+    "users.updated",
+    "users.updated"
+   ]
+  },
+  {
+   "kind": "household_moved",
+   "summary": "Hicks family moved from 2908 Fairview St to 4419 Redwood Dr, 95401",
+   "expected_events": [
+    "users.updated",
+    "users.updated"
+   ]
+  },
+  {
+   "kind": "household_moved",
+   "summary": "Patel family moved from 2981 Juniper St to 2498 Valley View Ave Apt 17, 95401",
+   "expected_events": [
+    "users.updated"
+   ]
+  },
+  {
+   "kind": "preferred_name",
+   "summary": "Samantha Lewis no longer goes by Sam",
+   "expected_events": [
+    "users.updated"
+   ]
+  }
+ ]
+}
