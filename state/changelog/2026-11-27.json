@@ -1,0 +1,87 @@
+{
+ "date": "2026-11-27",
+ "title": "Daily drift",
+ "totals": "203 students, 12 teachers, 30 sections, 251 contacts in 123 families",
+ "expected_events": {
+  "sections.updated": 19,
+  "users.created": 8,
+  "users.deleted": 3,
+  "users.updated": 2
+ },
+ "changes": [
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Lucia Rios (694857, grade 6, MS01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "users.deleted"
+   ]
+  },
+  {
+   "kind": "student_withdrawn",
+   "summary": "Withdrew Oliver Lane (445560, grade 8, MS01)",
+   "expected_events": [
+    "users.deleted",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "student_enrolled",
+   "summary": "Enrolled Jeremiah Nelson (675992, grade 8), sibling of Jacob, Skylar",
+   "expected_events": [
+    "users.created",
+    "users.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Olivia Gomez (561755, grade 5); guardians: Earl Gomez, Erin Gomez",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "family_enrolled",
+   "summary": "New family enrolled: Ava Miller (623709, grade Kindergarten); guardians: Ricardo Miller, Mary Miller",
+   "expected_events": [
+    "users.created",
+    "users.created",
+    "users.created",
+    "sections.updated",
+    "sections.updated"
+   ]
+  },
+  {
+   "kind": "guardian_added",
+   "summary": "Added aunt/uncle Oscar Rodriguez as an emergency contact for the Rodriguez family",
+   "expected_events": [
+    "users.created"
+   ]
+  },
+  {
+   "kind": "program_status",
+   "summary": "Luis Garcia: IEP started",
+   "expected_events": [
+    "users.updated"
+   ]
+  }
+ ]
+}

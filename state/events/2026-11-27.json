@@ -1,0 +1,23 @@
+{
+ "baseline": false,
+ "last_event_id": "6b083108fe6d1eace6aeca96",
+ "counts": {
+  "courses.deleted": 1,
+  "districts.updated": 1,
+  "sections.deleted": 1,
+  "sections.updated": 14,
+  "users.created": 4,
+  "users.deleted": 8,
+  "users.updated": 7
+ },
+ "total": 36,
+ "samples": {
+  "districts.updated": "#DEMO Cedar Valley Unified",
+  "users.created": "Ethan Bryant",
+  "users.updated": "Elizabeth Schmidt",
+  "sections.updated": "Homeroom - Page - HR",
+  "sections.deleted": "Math Intervention - Medina - 1",
+  "courses.deleted": "Math Intervention",
+  "users.deleted": "Ricardo Ramirez"
+ }
+}
